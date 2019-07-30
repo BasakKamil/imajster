@@ -3,7 +3,7 @@ $blackColor: black;
 
 * {
     padding: 0;
-    margin: 0;
+    margin: 0; 
     box-sizing: border-box;
 }
 .KamilaStopka{   
@@ -11,10 +11,8 @@ $blackColor: black;
   height: auto;
 
   canvas{
-    
       width: 100%;
       height: auto;
-  
   }
 
 }
