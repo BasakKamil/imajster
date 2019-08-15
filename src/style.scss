@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+
 $whiteColor: #ffffff;
 $blackColor: black;
+$font-family: 'Quicksand', sans-serif;
+$font-family2: 'Monoton', cursive;
 
 * {
     padding: 0;
     margin: 0; 
     box-sizing: border-box;
+    font-family: $font-family;
 }
 .KamilaStopka{   
   width: 100% !important;
@@ -22,10 +28,8 @@ $blackColor: black;
 }
 
 .KamilaMenu{
-  
     width: 100%;
     max-width: 100%;
-
 }
 #BodyBox {
 
@@ -49,7 +53,7 @@ $blackColor: black;
   padding: 1%;
   display: inline-flex;
   width: 100%;
-  background: lightslategrey;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
 }
 
 #BoodyBox{
@@ -80,14 +84,7 @@ $blackColor: black;
     -webkit-animation: scroll-left 10s linear infinite;
     animation: scroll-left 10s cubic-bezier(0, 0, 0.23, 0.93) infinite !important;
 }
-.FootBasi {
 
-  a{
-    width: 20%;
-    float: left;
-    display: block;
-  }
-}
 
 #menuCont{
     position: absolute;
@@ -141,11 +138,20 @@ body {
   }
   
   .FootBasi {
+
+    a{
+      width: 20%;
+      float: left;
+      display: block;
+    }
    
         p{
           padding: 0;
           width: 100%;
           margin: 0;
+          font-family: $font-family2 !important;
+          letter-spacing: 2px;
+          color: yellow;
           }
   }
   .KamilaMenu{ 
