@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import Menu from './Menu';
+import Header from './Header';
 
 class Services extends Component{
 
@@ -7,7 +8,7 @@ class Services extends Component{
         return(
 
             <div className="ServicesiMajster">
-                Services<br/>
+                <Header/>
                 <Menu/>
             </div>
         );

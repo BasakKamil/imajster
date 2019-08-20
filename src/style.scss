@@ -51,7 +51,8 @@ $font-family2: 'Monoton', cursive;
 
 .KamilHeader{
   padding: 1%;
-  display: inline-flex;
+  display: block;
+  position: absolute;
   width: 100%;
   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
 }
@@ -84,14 +85,21 @@ $font-family2: 'Monoton', cursive;
     -webkit-animation: scroll-left 10s linear infinite;
     animation: scroll-left 10s cubic-bezier(0, 0, 0.23, 0.93) infinite !important;
 }
+.Counter{
 
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  border-radius: 50px;
+}
 
 #menuCont{
     position: absolute;
     width: 100%;
     height: auto;
+    top: 10%;
     display: block;
-    min-height: 100px;
+    // min-height: 100px;
 }
 input[type=number] {
     width: 33.33%;

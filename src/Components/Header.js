@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import HeaderBottom from './HeaderBottom';
+import { Spring } from 'react-spring/renderprops';
 
 class Header extends Component {
   constructor(props) {
@@ -11,11 +12,22 @@ class Header extends Component {
   }
     render(){
       return(
-      <div className="KamilHeader">
-       <h1 className="Uno">{this.state.title}</h1>
-       <h2 className="Uno">Kamil Basak</h2>
-       <HeaderBottom />
-      </div>
+        
+     
+        <Spring 
+        from={{opacity:0}}
+        to={{opacity:1}}
+        config={{delay: 1000, duration: 1000}}
+        >
+          {props=>(
+            <div className="KamilHeader" style={props}>
+                  {this.state.title}
+                  <HeaderBottom/>
+            </div>
+          )}
+        </Spring>
+         
+
       );
     }
   }
