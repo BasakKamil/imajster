@@ -1,15 +1,19 @@
 import React,{Component} from 'react';
-import HeaderBottom from './HeaderBottom';
 import { Spring } from 'react-spring/renderprops';
+import HeaderBottom from './HeaderBottom.js';
+import {Transition, animated} from 'react-spring/renderprops';
+import Menu from './Menu';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'iMajster'
-
+ 
+    
+   state = {
+      title: 'iMajster',
+      showHeaderBottom: false
     }
-  }
+    toggle = e => this.setState({showHeaderBottom: !this.state.showHeaderBottom});
+  
+  
     render(){
       return(
         
@@ -22,7 +26,21 @@ class Header extends Component {
           {props=>(
             <div className="KamilHeader" style={props}>
                   {this.state.title}
-                  <HeaderBottom/>
+               <HeaderBottom toggle={this.toggle}/>
+               <Transition
+               native
+               items={this.state.showHeaderBottom}
+               from={{opacity: 0}}
+               enter={{opacity: 1}}
+               leave={{opacity: 0}}
+               >
+                 {show => show && (props =>(
+                   <animated.div style={props} className="kamcia">
+                     <Menu />
+                   </animated.div>
+                 ))}
+
+               </Transition>
             </div>
           )}
         </Spring>

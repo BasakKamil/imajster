@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Menu from './Menu';
+
 import Header from './Header';
 
 class Contact extends Component{
@@ -7,7 +7,7 @@ class Contact extends Component{
         return(
             <div>   
                 <Header/>
-                <Menu/>
+                
             </div>
     
             );

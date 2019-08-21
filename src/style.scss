@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Germania+One&display=swap');
+
 
 $whiteColor: #ffffff;
 $blackColor: black;
@@ -11,6 +13,11 @@ $font-family2: 'Monoton', cursive;
     margin: 0; 
     box-sizing: border-box;
     font-family: $font-family;
+}
+
+.Germania{
+  h1{
+  font-family: 'Germania One', cursive;}
 }
 .KamilaStopka{   
   width: 100% !important;
@@ -27,10 +34,7 @@ $font-family2: 'Monoton', cursive;
     margin: auto;
 }
 
-.KamilaMenu{
-    width: 100%;
-    max-width: 100%;
-}
+
 #BodyBox {
 
   canvas{
@@ -47,7 +51,19 @@ $font-family2: 'Monoton', cursive;
   width: 100%;
   min-width: 100px;
   min-height: 100px;
+  
+
+  canvas{
+    width: 100% !important;
+    border-radius: 4px;
+    border: 5px solid #2196f34f;
+    background: none;
+
+  }
+
 }
+
+
 
 .KamilHeader{
   padding: 1%;
@@ -73,7 +89,7 @@ $font-family2: 'Monoton', cursive;
 
 .ButtonBasi { 
   canvas{
-    border-radius: 160px;
+    // border-radius: 160px;
     width: 100%!important;
   }
 }
@@ -93,18 +109,17 @@ $font-family2: 'Monoton', cursive;
   border-radius: 50px;
 }
 
-#menuCont{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 10%;
-    display: block;
-    // min-height: 100px;
-}
+
 input[type=number] {
     width: 33.33%;
 }
-
+.kamcia{
+      float: left;
+      width: 100%;
+      height: auto;
+      display: block;
+      // min-height: 100px;
+}
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -163,11 +178,24 @@ body {
           }
   }
   .KamilaMenu{ 
+
+    width: 100%;
+    max-width: 100%;
+
     li{
     list-style: none;
     width: 25%;
     float: left;
     padding: 1%;
+    background: none !important;
+    }
+    canvas{
+      background: none !important;
+
+    }
+    a{
+      background: none !important;
+
     }
   }
   code {

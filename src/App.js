@@ -6,13 +6,15 @@ import GLTFLoader from 'three-gltf-loader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import  TransformControls  from './TransformControls.js'
 import fileGlb from './bread.glb' // GLB FILE
-import Header from './Components/Header';
-import Menu from './Components/Menu';
-import Footer from './Components/footer';
+import Header from './Components/Header.js';
+import Footer from './Components/footer.js';
+
+
 
 
 
 class App extends React.Component {
+  
   constructor(props) {
     super(props);
     // STATE FOR UPDATING INPUTS VALUE AND SET MODEL POSITION
@@ -158,21 +160,27 @@ class App extends React.Component {
     this.gltf[direction][axis] = this.state[direction][axis];
     this.renderer.render(this.scene, this.camera);
   };
+  state = {
+    showMenuButton: false
+  }
 
+toggle = e => this.setState({
+  showMenuButton: this.state.showMenuButton
+});
   render() {
     return (
             <div>
               <Header/>
-              <Menu/>
-            <div id="BoodyBox"
-              style={{width: "100%", height: "500px"}}
-              ref={mount => this.mount = mount}>
+              
+                 <div id="BoodyBox"
+                 style={{width: "100%", height: "500px"}}
+                 ref={mount => this.mount = mount}>
             </div>
             <Footer/>
             </div>
           
 
-            );
+            )
     
   }
 }
