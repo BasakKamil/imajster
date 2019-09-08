@@ -25,14 +25,14 @@ class Header extends Component {
         >
           {props=>(
             <div className="KamilHeader" style={props}>
-                  {this.state.title}
+                  
                <HeaderBottom toggle={this.toggle}/>
                <Transition
                native
                items={this.state.showHeaderBottom}
                from={{opacity: 0,transform: 'scale(0)'}}
                enter={{opacity: 1,transform: 'scale(1)'}}
-               leave={{opacity: 0}}
+               leave={{opacity: 0.1}}
                cofing={{delay: 1000, duration: 1000}}
                >
                  {show => show && (props =>(

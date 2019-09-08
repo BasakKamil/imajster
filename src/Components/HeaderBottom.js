@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
-
+import LogoiM from './LogoiM.js';
 
 class HeaderBootom extends Component{
 
@@ -10,8 +10,12 @@ class HeaderBootom extends Component{
         return(
         
             <div className="Uno">
-                   <button type="button" class="btn btn-warning"><Link to="/admin">Admin Panel</Link></button>
-                   <button onClick={this.props.toggle} class="btn btn-danger" >Menu!</button>
+                   <button type="button" className="KamciaButton btn btn-warning"><Link to="/admin">Admin Panel</Link></button>
+                   <button onClick={this.props.toggle} className="KamciaButton btn btn-danger" >Menu!</button>
+        
+                <LogoiM/>
+
+
           
             </div>
          

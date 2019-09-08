@@ -46,7 +46,7 @@ $font-family2: 'Monoton', cursive;
 }
 
 .ButtonBasi{
-  background: grey;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
   text-align: center;
   border-radius: 10px;
   width: 100%;
@@ -71,6 +71,27 @@ $font-family2: 'Monoton', cursive;
   position: absolute;
   width: 100%;
   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+
+  .Uno{
+    position: relative;
+      button:nth-child(1){
+        left: 10%;
+        position: absolute; 
+        a{
+        text-decoration: none;
+        font-family: "Monoton", cursive !important;
+        color: blueviolet;
+        }
+      }
+      button:nth-child(2){
+        left: 25%;
+        position: absolute;
+        font-family: "Monoton", cursive !important;
+        color: black;
+        font-weight: bold;
+      }
+
+  }
 }
 
 #BoodyBox{
@@ -80,7 +101,7 @@ $font-family2: 'Monoton', cursive;
 
 .KamilHeader { 
   .Uno{
-    width: 30%;
+    width: 100%;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
@@ -198,7 +219,35 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
+  .KamciaButton{
+    margin-left: 1%;
+    margin-right: 1%;
+  }
 
+  .LogoiMajster {
+    background: none;
+    float: left;
+    width: 30%;
+    path:nth-child(1){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(2){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(3){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(4){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(5){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(6){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(7){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    path:nth-child(8){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    rect{
+    background: none;
+    fill: none;
+    }
+    svg {
+    background: none;
+    fill: none;
+    width: 40%;
+    max-height: 50px;
+    }
+    
+}
   .App {
   
     text-align: center;

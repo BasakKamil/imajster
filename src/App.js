@@ -7,7 +7,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import  TransformControls  from './TransformControls.js'
 import fileGlb from './bread.glb' // GLB FILE
 import Header from './Components/Header.js';
-import Footer from './Components/footer.js';
+import Footer from './Components/footer';
+
 
 
 
@@ -177,6 +178,7 @@ toggle = e => this.setState({
                  ref={mount => this.mount = mount}>
             </div>
             <Footer/>
+            
             </div>
           
 
