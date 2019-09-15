@@ -24,7 +24,7 @@ class Header extends Component {
         config={{delay: 1000, duration: 1000}}
         >
           {props=>(
-            <div className="KamilHeader" style={props}>
+            <div className="KamilHeader container-fluid" style={props}>
                   
                <HeaderBottom toggle={this.toggle}/>
                <Transition

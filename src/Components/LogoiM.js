@@ -5,30 +5,41 @@ class LogoiM extends Component {
 
 
 render(){
-
-    const logo = document.querySelectorAll(".LogoiMajster svg path");
+   
+    
 
     const flightPath = {
-        curviness: 1.5, 
+        curviness: 1.25, 
         autoRotate: false,
         values: [
             {x:0,y:0},
-            {x:10,y:10},
-            {x:40,y:45},
-            {x:100,y:80},
-            {x:window.innerWidth/3,y:100},
-            {x:540,y:0}
+            {x:20,y:0},
+            {x:40,y:20},
+            {x:80,y:40},
+            {x:120, y:60},
+            {x:100,y:100},
+            {x:60,y:120},
+            {x:-40,y:80},
+            {x:-20,y:40},
+            {x:0,y:20},
+            {x:0,y:0},
+         
+           
+            // {x:window.innerWidth/3,y:100},
+       
         ]
     }
 
     const tween = new TimelineLite();
     tween.add(
-        TweenLite.to('.LogoiMajster',1,{
+        TweenLite.to('.LogoiMajster svg',3,{
             bezier: flightPath,
             ease: Power1.easeInOut
         })
     );
-    console.log(logo);
+
+ 
+
     return(
             <div className="LogoiMajster">
                 <svg width="690" height="390" viewBox="0 0 690 390" fill="none" xmlns="http://www.w3.org/2000/svg">

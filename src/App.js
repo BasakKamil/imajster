@@ -8,6 +8,9 @@ import  TransformControls  from './TransformControls.js'
 import fileGlb from './bread.glb' // GLB FILE
 import Header from './Components/Header.js';
 import Footer from './Components/footer';
+// import video from './Components/Film/2.mp4';
+// import { VideoTexture } from 'three';
+
 
 
 
@@ -49,12 +52,39 @@ class App extends React.Component {
     this.camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 10000 );
 
     //ADD SCENE
-    this.scene = new THREE.Scene();
+    this.scene = new THREE.Scene(
+
+    );
+
+      //ADD VIDEO
+      
+      
+   
+      // this.VideoTexture = new THREE.VideoTexture(video);
+      // this.VideoTexture.minFilter = THREE.LinearFilter;
+      // this.VideoTexture.magFilter = THREE.LinearFilter;
+      // this.VideoTexture.format = THREE.RGBAFormat;
+
+      // const geometry = new THREE.BoxGeometry( 20, 20, 20 );
+
+      // const material = [
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})})
+      // ];
+   
+
+
 
     // LIGHT
     this.light = new THREE.AmbientLight(0xffffff, 3.3);
     this.scene.add(this.light);
 
+  
+  
     // // ADD GRID HELPER
     // const size = 10;
     // const divisions = 25;
@@ -169,6 +199,7 @@ toggle = e => this.setState({
   showMenuButton: this.state.showMenuButton
 });
   render() {
+
     return (
             <div>
               <Header/>
@@ -176,6 +207,9 @@ toggle = e => this.setState({
                  <div id="BoodyBox"
                  style={{width: "100%", height: "500px"}}
                  ref={mount => this.mount = mount}>
+                   
+          
+                  
             </div>
             <Footer/>
             
