@@ -2,10 +2,20 @@ import React,{Component} from 'react';
 
 
 class Admin extends Component{
+
+   
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "Bastric91@gmail.com"
+        }
+    
+    }
     handleLoginChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
+    
     }
     render(){
 

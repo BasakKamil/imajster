@@ -14,7 +14,13 @@ return(
 <Spring>
     {props=>(
             <div style={props}>
-                <button className="MenuBasi" onClick={this.props.toggle}>MENU!</button>
+                <button className="MenuBasi" onClick={this.props.toggle}>
+
+
+Menu
+
+                  
+                </button>
             </div>
     )} 
 </Spring>

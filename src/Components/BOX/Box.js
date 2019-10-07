@@ -97,7 +97,7 @@ this.animate();
   
     render() {
         return (
-          <a href="http://prevohouse.pl/">
+          <a href="http://prevohouse.pl/" className="col-3">
             <div
               id="Box"
               className="KamilaStopka"

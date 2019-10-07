@@ -7,10 +7,11 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import  TransformControls  from './TransformControls.js'
 import fileGlb from './bread.glb' // GLB FILE
 import Header from './Components/Header.js';
-import Footer from './Components/footer';
+import Footer from './Components/footer.js';
+import NewCanvas from './Components/newCanvas.js';
+
 // import video from './Components/Film/2.mp4';
 // import { VideoTexture } from 'three';
-
 
 
 
@@ -203,15 +204,10 @@ toggle = e => this.setState({
     return (
             <div>
               <Header/>
-              
-                 <div id="BoodyBox"
-                 style={{width: "100%", height: "500px"}}
-                 ref={mount => this.mount = mount}>
-                   
-          
-                  
-            </div>
-            <Footer/>
+                 <div className="BoodyBox" style={{width: "100%"}} ref={mount => this.mount = mount}> </div>
+                <div className="BodyBox2"> <NewCanvas/> </div>
+
+             <Footer/>
             
             </div>
           

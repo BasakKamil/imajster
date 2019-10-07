@@ -97,7 +97,7 @@ this.animate();
   
     render() {
         return (
-          <a href="http://wojciechowskifotografia.pl/">
+          <a href="http://wojciechowskifotografia.pl/" className="col-3">
             <div
               id="Box1"
               className="KamilaStopka"

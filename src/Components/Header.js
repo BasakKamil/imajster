@@ -33,7 +33,7 @@ class Header extends Component {
                from={{opacity: 0,transform: 'scale(0)'}}
                enter={{opacity: 1,transform: 'scale(1)'}}
                leave={{opacity: 0.1}}
-               cofing={{delay: 1000, duration: 1000}}
+               cofing={{ duration: 1000}}
                >
                  {show => show && (props =>(
                    <animated.div style={props} className="kamcia">

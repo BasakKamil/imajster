@@ -98,7 +98,7 @@ this.animate();
   
     render() {
         return (
-          <a href="http://ammankebab.pl/">
+          <a href="http://ammankebab.pl/" className="col-3">
             <div
               id="Box2"
               className="KamilaStopka"

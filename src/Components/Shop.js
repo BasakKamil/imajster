@@ -1,33 +1,23 @@
 import React,{Component} from 'react';
 import Header from './Header';
 import { Spring } from 'react-spring/renderprops';
-// import * as ScrollMagic from "scrollmagic";
+import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import { TimelineLite, TweenLite, Power2 } from 'gsap';
-import {ScrollMagic} from 'scrollmagic';
+import Api from './Button/api';
 
 
 
 class Shop extends Component{
-    // constructor(props) {
-    //     super(props);
-    //     this.controller = new ScrollMagic.Controller();
-    //     this.state = {
-    //         pinText: 'Unpinned.'
-    //     };
-    // }
-  
-    // componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+        email: "Bastric91@gmail.com"
+    }
 
-    //     const controller = new ScrollMagic.Controller();
-    //     new ScrollMagic.Scene({triggerElement: ".Products", duration: 1500, tiggerHook:0})
-    //         .addIndicators() // add indicators (requires plugin)
-    //         .addTo(controller);
-        
-
-    // }
+}
 
 
-render(){
+  render(){
   
     const flight = {
         curviness: 2, 
@@ -49,7 +39,7 @@ render(){
 
        
     return(
-
+      
         <div className="ShopiMajster container-fluid">
             <Header/>
             <div className="Counter">
@@ -69,15 +59,135 @@ render(){
             </Spring>
             
             </div>
-            <div className="Products row">
+          
+            <Timeline lineColor={'#ddd'}>
+  <TimelineItem
+    key="001"
+    dateText="11/2010 – Present"
+    style={{ color: '#e86971' }}
+  >
+    <h3>Title, Company</h3>
+    <h4>Subtitle</h4>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+  </TimelineItem>
+  <TimelineItem
+    key="002"
+    animate={true}
+    dateText="04/2009 – 11/2010"
+    dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
+    bodyContainerStyle={{
+      background: '#ddd',
+      padding: '20px',
+      borderRadius: '8px',
+      boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+    }}
+  >
+    <h3 style={{ color: '#61b8ff' }}>Title, Company</h3>
+    <h4 style={{ color: '#61b8ff' }}>Subtitle</h4>
+    <p className="Products row">
                         <h2>Produkty:</h2>
-                        <div className="GridKamil col-6"> 1 Grid</div>
-                        <div className="GridKamil col-6"> 2 Grid</div>
-                        <div className="GridKamil col-6"> 2 Grid</div>
-                        <div className="GridKamil col-6"> 2 Grid</div>
-            </div>
-         
+                        <p className="GridKamil col-5"> 1 Grid</p>
+                        <p className="GridKamil col-5"> 2 Grid</p>
+                        <p className="GridKamil col-5"> 2 Grid</p>
+                        <p className="GridKamil col-5"> 2 Grid</p>
+            </p>
+    <p>
+      <button id="Kamciu">Klik!</button>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+  </TimelineItem>
+  <TimelineItem
+    key="003"
+    dateComponent={(
+      <div
+        style={{
+          display: 'block',
+          float: 'left',
+          padding: '10px',
+          background: 'rgb(150, 150, 150)',
+          color: '#fff',
+        }}
+      >
+        11/2008 – 04/2009
+      </div>
+    )}
+  >
+    <h3>Title, Company</h3>
+    <h4>Subtitle</h4>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+  </TimelineItem>
+  <TimelineItem
+    key="004"
+    dateText="08/2008 – 11/2008"
+    dateInnerStyle={{ background: '#76bb7f' }}
+  >
+    <h3>Title, Company</h3>
+    <h4>Subtitle</h4>
+   
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
+    <p>
+      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+      est.
+    </p>
 
+  
+  </TimelineItem>
+</Timeline>
+         
+<Api/>
         </div>
 
         );

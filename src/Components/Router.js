@@ -6,6 +6,7 @@ import PageNotFound from './PageNotFound';
 import Contact from './Contact';
 import Services from './Services';
 import Admin from './Admin';
+import Cv from './CV';
 
 export default class Router extends Component {
 
@@ -19,6 +20,7 @@ export default class Router extends Component {
                     <Route exact path='/contact' component={Contact}/>
                     <Route exact path='/services' component={Services}/>
                     <Route exact path='/admin' component={Admin}/>
+                    <Route exact path='/cv' component={Cv}/>
                     <Route component={PageNotFound}/>
                 </Switch>
             </BrowserRouter>

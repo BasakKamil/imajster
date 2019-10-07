@@ -95,7 +95,7 @@ this.animate();
   
     render() {
         return (
-          <a href="http://slubnaekranie.pl/">
+          <a href="http://slubnaekranie.pl/" className="col-3">
             <div
               id="Box3"
               className="KamilaStopka"
