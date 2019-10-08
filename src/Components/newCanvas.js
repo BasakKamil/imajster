@@ -1,17 +1,15 @@
 import React,{Component} from 'react';
 import { TimelineLite, TweenLite, Power2 } from 'gsap';
-// import { ScrollMagic } from 'scrollmagic';
-
+// import * as ScrollMagic from 'scrollmagic'
+// import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min'
 
 
 class newCanvas extends Component{
     constructor(){
         super();
         this.state = { name: 'iPhone' };
-        //  this.handleClick = this.tl.play();
-        //  this.controller = new ScrollMagic.Controller();
-        //  this.scene= new ScrollMagic.Scene({triggerElement: '.newCanvas', duration: 3000}).addIndicators().addTo(this.controller);
-         this.tl = new TimelineLite({paused: true});   
+        this.tl = new TimelineLite({paused: true});  
+        //  this.controller = new ScrollMagic.Controller(); 
          this.tween2 = new TimelineLite();
          this.flightPath2 = {
             curviness: 1.5,
@@ -28,21 +26,14 @@ class newCanvas extends Component{
     
             ]
         }
+        this.handleClick = this.tl.play();
+       
         
     }
 componentDidMount(){
- // const navButton = document.querySelector('.nav-button');
-        // const navOpen = document.querySelector('.nav-open');
-        // this.tl.to('.cover',1,{
-        //     width: '60%',
-        //     ease: Power2.easeOut
-        //  })
-        //  .to('nav',1,{
-        //      height: '100%',
-        //      ease: Power2.easeOut
-        //  });
-        // this.tl.addEventListener('click', this.handleClick);
-    
+     
+
+        // Animacja w GSAP
         this.tween2.add(
             TweenLite.to('.iPhoneFly',3,{
                 bezier: this.flightPath2,
@@ -58,7 +49,7 @@ componentDidMount(){
 
         return(
                    <div className="newCanvas">
-                    <nav className="nav-closed">
+                        <nav className="nav-closed">
                         <h3>What we can Repair for you ?</h3>
                         <ul className="nav-links">
                          <li className="nav-button btn-primary" onClick={this.handleClick}>iPhone</li>
@@ -66,17 +57,37 @@ componentDidMount(){
                          <li className="nav-button btn-info">MacBook</li>
                          <li className="nav-button btn-success">PC</li>
                         </ul>
-                    </nav>   
-                    <nav className="nav-open">
-                        <img className="iPhoneFly" src="https://cdn4.iconfinder.com/data/icons/iphone-5s-5c/256/iPhone-5S-Gold.png" alt={this.state.name}></img>
-                        <div className="iPhones">
+                       </nav>   
+                      
+                        <nav className="nav-open">
+                           <img className="iPhoneFly" src="https://cdn4.iconfinder.com/data/icons/iphone-5s-5c/256/iPhone-5S-Gold.png" alt={this.state.name}></img>
+                         <div className="iPhones">
                             Look iPhones
-                            {/* <img className = "cover" src="https://i4.skapiec.pl/1/nOgktkraW1hZ2VzL2IxMmZkYzk1MThmMmM1MTExMjdmYzJlOTNkYzY1MDIzLmpwZ5OVAs0CvADCw5UCAM0CvMLDkwmmOWU2OWYwBg/apple-iphone-7-128gb-czerwony-mprl2pm-a.jpg" alt={this.state.name}></img> */}
                         </div>
-                    </nav>
-                     <div className="showing col-md-4"> 
+                       
+                          </nav>
+    
+                         <div className="showing col-md-4"> 
                             Krótkim opis co robimy...
-                     </div>        
+                     </div>       
+                     {/* <div className="Nowy">
+                       <Controller>
+                          <Scene duration={500} offset={50} triggerElement=".trigger">
+                               <Tween
+                                    staggerFrom={{ y: 50, visibility: "hidden", opacity: 0 }}
+                                    staggerTo={{ y: 0, visibility: "visible", opacity: 1 }}
+                                    stagger={1}
+                                >
+                                 <div className="trigger">
+                                 <img className="iPhoneFly" src="https://cdn4.iconfinder.com/data/icons/iphone-5s-5c/256/iPhone-5S-Gold.png" alt={this.state.name}></img>
+                                     </div>
+                                  <div className="div1" />
+                                    <div className="div2" />
+                                        <div className="div3" />
+                                  </Tween>
+                         </Scene>
+                      </Controller> 
+                      </div> */}
                    </div>
               )
 

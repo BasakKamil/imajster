@@ -254,7 +254,16 @@ body{
   }
 }
 
+.Nowy{
+  
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    background-color: red;
 
+
+}
 
 .marquee-inner{
   -moz-transform: translateX(100%);
@@ -415,5 +424,52 @@ body {
     text-align: center;
   
   
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .div1 {
+    background-color: red;
+    height: 400px;
+    width: 100%;
+  }
+  
+  .div2 {
+    background-color: green;
+    height: 400px;
+    width: 100%;
+  }
+  
+  .div3 {
+    background-color: blue;
+    height: 400px;
+    width: 100%;
+  }
+  
+  .bottomSpacing {
+    height: 500px;
+  }
+
+ 
+  
+  
+    .AdminMajster{
+      
+        form{
+            text-align: center;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            border-radius: 10px;
+            margin: 2%;
+            padding: 2%;
+            }
+    }
+  .topSpacing {
+    height: 500px;
+    margin: 10%;
+    font-size: 40px;
+    background-color: grey;
   }
   
