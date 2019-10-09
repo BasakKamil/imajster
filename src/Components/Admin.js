@@ -10,10 +10,10 @@ class Admin extends Component{
             email: "Bastric91@gmail.com"
         }
         this.items = [
-            {name: 'Kamil', surname: 'Basak', old: 28},
-            {name: 'Kuba', surname: 'Basak', old: 26},
-            {name: 'Krzysztof', surname: 'Sech', old: 27},
-            {name: 'Piotrek', surname: 'Mackiewicz', old: 28}
+            {name: 'Kamil', surname: 'Basak', old: 28 , monets: 2},
+            {name: 'Kuba', surname: 'Basak', old: 26, monets: 8},
+            {name: 'Krzysztof', surname: 'Sech', old: 27, monets: 3},
+            {name: 'Piotrek', surname: 'Mackiewicz', old: 28, monets: 1}
 
         ]
 

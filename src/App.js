@@ -12,7 +12,7 @@ import NewCanvas from './Components/newCanvas.js';
 
 // import video from './Components/Film/2.mp4';
 // import { VideoTexture } from 'three';
-
+import Foto1 from './Components/BOX/oskar.jpg';
 
 
 
@@ -50,12 +50,13 @@ class App extends React.Component {
     this.mount.appendChild(this.renderer.domElement);
 
     //ADD CAMERA
-    this.camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 10000 );
+    this.camera = new THREE.PerspectiveCamera( 90, width / height, 0.1, 10000 );
+    this.camera.position.x = 0 ;
+    this.camera.position.y = 0;
+    this.camera.position.z = 300;
 
     //ADD SCENE
-    this.scene = new THREE.Scene(
-
-    );
+    this.scene = new THREE.Scene();
 
       //ADD VIDEO
       
@@ -66,18 +67,29 @@ class App extends React.Component {
       // this.VideoTexture.magFilter = THREE.LinearFilter;
       // this.VideoTexture.format = THREE.RGBAFormat;
 
-      // const geometry = new THREE.BoxGeometry( 20, 20, 20 );
+      this.geometry = new THREE.BoxGeometry( 300, 300, 300 );
 
-      // const material = [
-      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
-      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
-      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
-      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
-      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})}),
-      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:VideoTexture,side:THREE.DoubleSide})})
+      // this.material = [
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
+      //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})})
       // ];
+      this.material = [
+        new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
+        new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide})
+      ];
    
-
+      this.cube = new THREE.Mesh( this.geometry, this.material );
+      this.cube.position.z = -10;
+      this.scene.add( this.cube );
+     
 
 
     // LIGHT

@@ -85,7 +85,7 @@ h3{
     text-align: center;
     margin: 1%;
     color: wheat;
-    margin-bottom: 5%;
+  
 
 }
 }
@@ -103,6 +103,10 @@ h3{
 }
 .newCanvas{
     padding: 2%;
+    width: 100%;
+      position: relative;
+      display: inline-block;
+  
 }
 .showing{
 z-index: 99;
@@ -218,6 +222,7 @@ margin-top: 10% !important;
         font-family: "Monoton", cursive !important;
         color: black;
         font-weight: bold;
+        background-image: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
       }
 
   }
@@ -225,8 +230,8 @@ margin-top: 10% !important;
 .nav-open{
   position: relative;
   .iPhoneFly{
-  position: absolute;
-  left: 10%;
+    position: fixed;
+  left: 1%;
   top:30%;
   z-index: 9;
   }
@@ -453,9 +458,14 @@ body {
     height: 500px;
   }
 
- 
-  
-  
+  .nav-links{
+  li{
+  img{
+    width: 80%;
+    margin: 1%;
+    }
+  }  
+} 
     .AdminMajster{
       
         form{

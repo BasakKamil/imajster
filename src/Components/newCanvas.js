@@ -22,7 +22,7 @@ class newCanvas extends Component{
                 {x:350,y:-50},
                 {x:600, y:100},
                 {x:800,y:0},
-                {x:window.innerWidth, y: 100}
+                {x:window.innerWidth/1.25, y: 10}
     
             ]
         }
@@ -52,7 +52,8 @@ componentDidMount(){
                         <nav className="nav-closed">
                         <h3>What we can Repair for you ?</h3>
                         <ul className="nav-links">
-                         <li className="nav-button btn-primary" onClick={this.handleClick}>iPhone</li>
+                         <li className="nav-button btn-primary" onClick={this.handleClick}>iPhone  <br/>
+                       </li>
                          <li className="nav-button btn-danger">iMac</li>
                          <li className="nav-button btn-info">MacBook</li>
                          <li className="nav-button btn-success">PC</li>
@@ -67,9 +68,7 @@ componentDidMount(){
                        
                           </nav>
     
-                         <div className="showing col-md-4"> 
-                            Krótkim opis co robimy...
-                     </div>       
+                             
                      {/* <div className="Nowy">
                        <Controller>
                           <Scene duration={500} offset={50} triggerElement=".trigger">
