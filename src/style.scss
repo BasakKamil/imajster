@@ -33,6 +33,13 @@ $font-family2: 'Monoton', cursive;
     left: 10%;
     width: 80%;
 }
+
+@keyframes line-anim{
+  to{
+
+    stroke-dashoffset: 0;
+  }
+}
 @keyframes Gradient{
   0%{
     background-position: 0% 50%;
@@ -84,7 +91,7 @@ h3{
   
     text-align: center;
     margin: 1%;
-    color: wheat;
+    color: darkslategrey;
   
 
 }
@@ -117,7 +124,7 @@ padding: 1%;
 margin: 2%;
 }
 .BodyBox2{
-background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 min-height: 250px;
 
 }
@@ -227,13 +234,40 @@ margin-top: 10% !important;
 
   }
 }
+
+.AdminPanelAdd{
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  margin: 10%;
+  padding: 10%;
+  text-align: center;
+}
+  .st0{
+    background-image: linear-gradient(to top, #007adf 0%, #00ecbc 100%);
+  }
+
+
+  .st1{fill:rgb(49, 120, 228);}
+
+
+  .KamilaTlo{
+    background: yellow;
+    z-index: 1;
+    position: absolute;
+    top:0%;
+  }
+.HomeFooter{
+  padding: 1%;
+  color: '#f00000';
+  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+}
 .nav-open{
   position: relative;
   .iPhoneFly{
-    position: fixed;
+    position: relative;
   left: 1%;
   top:30%;
   z-index: 9;
+  width: 10%;
   }
   .iPhones{
   z-index: 99;
@@ -404,14 +438,15 @@ body {
     text-align: center;
     width: 100%;
     left: 0;
-    path:nth-child(1){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(2){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(3){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(4){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(5){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(6){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(7){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
-    path:nth-child(8){ stroke-dasharray: 50px; stroke-dashoffset: 10px;}
+    animation: fill 0.5s ease forward 3s;
+    path:nth-child(1){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 0.6s}
+    path:nth-child(2){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 0.9s}
+    path:nth-child(3){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.2}
+    path:nth-child(4){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.5s}
+    path:nth-child(5){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.8s}
+    path:nth-child(6){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 2.1s}
+    path:nth-child(7){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 2.4s}
+    path:nth-child(8){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 2.7s}
     rect{
     background: none;
     fill: none;
@@ -467,14 +502,17 @@ body {
   }  
 } 
     .AdminMajster{
+      .KamilaForm{
+        z-index: 999;
+        position: relative;
+        text-align: center;
+        h1{
+          margin-top: 5%;
+          margin-bottom: 5%;
+        }
+      } 
       
-        form{
-            text-align: center;
-            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-            border-radius: 10px;
-            margin: 2%;
-            padding: 2%;
-            }
+      
     }
   .topSpacing {
     height: 500px;

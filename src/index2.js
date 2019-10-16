@@ -6,3 +6,5 @@ const H = new Highway.Core({
     default: Fade
   }
 });
+
+export default H

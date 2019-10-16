@@ -7,6 +7,7 @@ import Contact from './Contact';
 import Services from './Services';
 import Admin from './Admin';
 import Cv from './CV';
+import AdminPanel from './Admin/AdminPanel';
 
 export default class Router extends Component {
 
@@ -21,6 +22,7 @@ export default class Router extends Component {
                     <Route exact path='/services' component={Services}/>
                     <Route exact path='/admin' component={Admin}/>
                     <Route exact path='/cv' component={Cv}/>
+                    <Route exact path='/AdminPanel' component={AdminPanel}/>
                     <Route component={PageNotFound}/>
                 </Switch>
             </BrowserRouter>

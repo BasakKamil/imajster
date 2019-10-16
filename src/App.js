@@ -9,10 +9,12 @@ import fileGlb from './bread.glb' // GLB FILE
 import Header from './Components/Header.js';
 import Footer from './Components/footer.js';
 import NewCanvas from './Components/newCanvas.js';
-
+import HomeFooter from './Components/HomeFooter';
 // import video from './Components/Film/2.mp4';
 // import { VideoTexture } from 'three';
 import Foto1 from './Components/BOX/oskar.jpg';
+import AdminPanel from './Components/Admin/AdminPanel';
+
 
 
 
@@ -25,8 +27,14 @@ class App extends React.Component {
     // STATE FOR UPDATING INPUTS VALUE AND SET MODEL POSITION
     this.state = {position: { x: 0, y: 0, z: 0 },
                   rotation: { x: 0, y: 0, z: 0 },
-                  scale: { x: 3, y: 3, z: 3 } }
+                  scale: { x: 3, y: 3, z: 3 },
+                  products: []
+          
+                }
+                  
   }
+
+
   // FUNCTION FOR SAVE VALUES FORM INPUTS
   stateUpdate = (event, direction, axis, ajustFunc) => {
     // CHANGING EVENT TO MOUSE DATA IF...
@@ -39,21 +47,18 @@ class App extends React.Component {
 
   // FUNCTION TO DO STAFF BEFORE RENDERING ELEMENTS
   componentDidMount = () => {
-    const width = this.mount.clientWidth;
-    const height = this.mount.clientHeight;
+    this.width = this.mount.clientWidth;
+    this.height = this.mount.clientHeight;
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({antialias: true});
     this.renderer.setClearColor('#dbdbdb');
-    this.renderer.setSize(width, height);
+    this.renderer.setSize(this.width,this.height);
     this.renderer.gammaFactor = 1.5;
     this.renderer.gammaOutput = true;
     this.mount.appendChild(this.renderer.domElement);
 
     //ADD CAMERA
-    this.camera = new THREE.PerspectiveCamera( 90, width / height, 0.1, 10000 );
-    this.camera.position.x = 0 ;
-    this.camera.position.y = 0;
-    this.camera.position.z = 300;
+    this.camera = new THREE.PerspectiveCamera( 90, this.width / this.height, 0.1, 1000 );
 
     //ADD SCENE
     this.scene = new THREE.Scene();
@@ -67,7 +72,7 @@ class App extends React.Component {
       // this.VideoTexture.magFilter = THREE.LinearFilter;
       // this.VideoTexture.format = THREE.RGBAFormat;
 
-      this.geometry = new THREE.BoxGeometry( 300, 300, 300 );
+      this.geometry = new THREE.BoxGeometry( 600, 600, 600 );
 
       // this.material = [
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
@@ -87,7 +92,7 @@ class App extends React.Component {
       ];
    
       this.cube = new THREE.Mesh( this.geometry, this.material );
-      this.cube.position.z = -10;
+      this.cube.position.z = -100;
       this.scene.add( this.cube );
      
 
@@ -124,8 +129,9 @@ class App extends React.Component {
 
     // ORBIT CONTROL
     this.orbit = new OrbitControls( this.camera, this.renderer.domElement );
-    this.camera.position.set( 0, 2, 2 );
+    this.camera.position.set( 200, 2, 2 );
     this.orbit.update();
+
 
     //EVENT LISTNER TO VIEW MODEL IN DIFFERENT POSITIONS
     this.orbit.addEventListener("change", () => this.renderer.render(this.scene, this.camera));
@@ -211,19 +217,27 @@ class App extends React.Component {
 toggle = e => this.setState({
   showMenuButton: this.state.showMenuButton
 });
+
+addNewProduct = (product) => {
+  let newProducts = [...this.state.products];
+
+  newProducts.push(product);
+
+  this.setState({
+      products: newProducts
+  });
+}
   render() {
 
     return (
             <div>
               <Header/>
-                 <div className="BoodyBox" style={{width: "100%"}} ref={mount => this.mount = mount}> </div>
+                <div className="BoodyBox"  ref={mount => this.mount = mount}> </div>
                 <div className="BodyBox2"> <NewCanvas/> </div>
-
-             <Footer/>
-            
+              <Footer/>
+              <HomeFooter/>
+              <AdminPanel products={this.state.products} addProduct={this.addNewProduct}/>
             </div>
-          
-
             )
     
   }

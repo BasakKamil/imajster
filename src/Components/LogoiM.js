@@ -5,10 +5,7 @@ class LogoiM extends Component {
 
 
 render(){
-   
-    
-
-    const flightPath = {
+   this.flightPath = {
         curviness: 1.25, 
         autoRotate: false,
         values: [
@@ -30,10 +27,10 @@ render(){
         ]
     }
 
-    const tween = new TimelineLite();
-    tween.add(
+    this.tween = new TimelineLite();
+    this.tween.add(
         TweenLite.to('.LogoiMajster svg',3,{
-            bezier: flightPath,
+            bezier: this.flightPath,
             ease: Power1.easeInOut
         })
     );

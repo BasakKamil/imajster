@@ -10,10 +10,10 @@ class newCanvas extends Component{
         this.state = { name: 'iPhone' };
         this.tl = new TimelineLite({paused: true});  
         //  this.controller = new ScrollMagic.Controller(); 
-         this.tween2 = new TimelineLite();
-         this.flightPath2 = {
+        this.tween2 = new TimelineLite();
+        this.flightPath2 = {
             curviness: 1.5,
-            autoRotate: true,
+            autoRotate: false,
             values: [
                 {x:100, y: -20},
                 {x:300, y:10},
@@ -26,12 +26,9 @@ class newCanvas extends Component{
     
             ]
         }
-        this.handleClick = this.tl.play();
-       
-        
+        this.handleClick = this.tl.play();        
     }
 componentDidMount(){
-     
 
         // Animacja w GSAP
         this.tween2.add(
@@ -52,21 +49,16 @@ componentDidMount(){
                         <nav className="nav-closed">
                         <h3>What we can Repair for you ?</h3>
                         <ul className="nav-links">
-                         <li className="nav-button btn-primary" onClick={this.handleClick}>iPhone  <br/>
-                       </li>
-                         <li className="nav-button btn-danger">iMac</li>
-                         <li className="nav-button btn-info">MacBook</li>
-                         <li className="nav-button btn-success">PC</li>
+                        <li className="nav-button btn-primary" onClick={this.handleClick}> <p>iPhone</p> <br/>
+                        </li>
+                        <li className="nav-button btn-danger">iMac</li>
+                        <li className="nav-button btn-info">MacBook</li>
+                        <li className="nav-button btn-success">PC<br/></li>
                         </ul>
-                       </nav>   
-                      
+                        </nav>   
                         <nav className="nav-open">
-                           <img className="iPhoneFly" src="https://cdn4.iconfinder.com/data/icons/iphone-5s-5c/256/iPhone-5S-Gold.png" alt={this.state.name}></img>
-                         <div className="iPhones">
-                            Look iPhones
-                        </div>
-                       
-                          </nav>
+                        <img className="iPhoneFly" src="https://cdn4.iconfinder.com/data/icons/iphone-5s-5c/256/iPhone-5S-Gold.png" alt={this.state.name}></img>
+                        </nav>
     
                              
                      {/* <div className="Nowy">

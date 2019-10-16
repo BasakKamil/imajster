@@ -19,7 +19,7 @@ class Shop extends Component{
 
   render(){
   
-    const flight = {
+    this.flight = {
         curviness: 2, 
         autoRotate: true,
         values: [
@@ -29,10 +29,10 @@ class Shop extends Component{
         ]
     }
 
-    const tween2 = new TimelineLite();
-    tween2.add(
+    this.tween2 = new TimelineLite();
+    this.tween2.add(
         TweenLite.to('.Products',1,{
-            bezier: flight,
+            bezier: this.flight,
             ease: Power2.easeInOut
         })
     );

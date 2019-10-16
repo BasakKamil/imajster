@@ -26,22 +26,20 @@ class Header extends Component {
           {props=>(
             <div className="KamilHeader container-fluid" style={props}>
                   
-               <HeaderBottom toggle={this.toggle}/>
-               <Transition
-               native
-               items={this.state.showHeaderBottom}
-               from={{opacity: 0,transform: 'scale(0)'}}
-               enter={{opacity: 1,transform: 'scale(1)'}}
-               leave={{opacity: 0.1}}
-               cofing={{ duration: 1000}}
-               >
-                 {show => show && (props =>(
-                   <animated.div style={props} className="kamcia">
-                     <Menu />
-                   </animated.div>
-                 ))}
-
-               </Transition>
+                <HeaderBottom toggle={this.toggle}/>
+                <Transition
+                native
+                items={this.state.showHeaderBottom}
+                from={{opacity: 0,transform: 'scale(0)'}}
+                enter={{opacity: 1,transform: 'scale(1)'}}
+                leave={{opacity: 0.1}}
+                cofing={{ duration: 1000}}>
+                {show => show && (props =>(
+                <animated.div style={props} className="kamcia">
+                <Menu />
+                </animated.div>
+                ))}
+                </Transition>
             </div>
           )}
         </Spring>

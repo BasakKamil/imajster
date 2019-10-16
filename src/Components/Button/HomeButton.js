@@ -8,16 +8,31 @@ import React, { Component } from "react";
 
 
 class HomeButton extends Component {
+
+
+  constructor(){
+    super();
+    this.state = {
+      imgToDisplay: this.logopaths ,
+      nameButton: 'Witamy w Domu!'
+    }
+
+  }
   
+componentDidMount(){
 
+this.logopaths = document.querySelectorAll('#HomeCanvas svg path').length;
+console.log(this.logopaths);
+
+}
 render() {
-
 
     return (
       
         <div
           id="HomeCanvas"
           className="ButtonBasi"
+          alt= {this.state.nameButton}
         >
         <svg width="148" height="47" viewBox="0 0 148 47" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="path-1-outside-1" maskUnits="userSpaceOnUse" x="0.404785" y="0.664001" width="147" height="46" fill="black">
