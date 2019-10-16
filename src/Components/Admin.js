@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Anime from 'react-anime';
 import DelayedComponent from './DelayedComponent';
+import anime from 'animejs';
 
 class Admin extends Component{
 
@@ -19,24 +20,21 @@ class Admin extends Component{
         ]
 
         
-        // this.morphing = anime({
-        //     autoplay: true,
-        //     targets: '.polymorph',
-        //     points: [
-        //         { value: '0.38,762.63 0.38,-3.09 255.74,623.34 1360.03,762.63'},
-        //         { value: '0.38,762.63 0.38,3.89 59.65,705.36 1349.1,762.63'}, 
-        //         { value: '0.38,762.63 0.38,5.34 2.13,29.48 6.63,757.37 1196.12,762.63'}
-        //     ],
-        //     easing: 'easeInQutIn',
-        //     duration: 2000,
-        //     loop: true
-        //   });
-        
     
     }
 
  
     componentDidMount(){
+        // Animowanie wjezdzajacego Nagłówka h2
+        this.morphing = anime({
+            targets: '.KamilaNagl',
+            translateX: window.innerWidth/3,
+            easing: 'easeInOutExpo',
+            loop: false,
+            duration: 4000
+        });
+
+
 
         // 1 Metoda: Filter w Tablicach w React
         this.fillteredItems = this.items.filter((item) => {
@@ -72,8 +70,7 @@ class Admin extends Component{
 
     render(){
 
-          console.log(this.morphing);
-          
+        console.log(this.morphing);  
         const adminCss={ padding : '1%', margin: '1%' ,width: '98%'}
         const w = window.innerWidth
         const h = window.innerHeight;
@@ -104,6 +101,7 @@ class Admin extends Component{
                     </form>  
              
                 </DelayedComponent>   
+               <h2 className="KamilaNagl">Zaloguj się jako Uzytkownik!</h2>
         </div>
         );
     }
