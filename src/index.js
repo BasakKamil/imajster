@@ -6,5 +6,5 @@ import Router from './Components/Router';
 
 ReactDOM.render(
   <Router />,
-  document.querySelector('#root')
-);
+  document.querySelector('#root'));
+  // registerServiceWorker();

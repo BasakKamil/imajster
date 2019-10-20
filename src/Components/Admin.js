@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Anime from 'react-anime';
 import DelayedComponent from './DelayedComponent';
 import anime from 'animejs';
+import AdminPanel from './AdminPanel';
 
 class Admin extends Component{
 
@@ -9,7 +10,7 @@ class Admin extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            email: "Bastric91@gmail.com"
+            email: "Bastric91@gmail.com",
          
         }
         this.items = [
@@ -28,10 +29,12 @@ class Admin extends Component{
         // Animowanie wjezdzajacego Nagłówka h2
         this.morphing = anime({
             targets: '.KamilaNagl',
-            translateX: window.innerWidth/3,
+            translateX:[{ value: window.innerWidth/3,duration: 4000,delay: 500 },
+            {value: window.innerWidth/2,duration: 3000,delay: 500},
+            { value: window.innerWidth/3,duration: 4000,delay: 500 }
+            ],
             easing: 'easeInOutExpo',
             loop: false,
-            duration: 4000
         });
 
 
@@ -71,7 +74,7 @@ class Admin extends Component{
     render(){
 
         console.log(this.morphing);  
-        const adminCss={ padding : '1%', margin: '1%' ,width: '98%'}
+        // const adminCss={ padding : '1%', margin: '1%' ,width: '98%'}
         const w = window.innerWidth
         const h = window.innerHeight;
         const style = {width:`${w}`, height: `${h}`};
@@ -93,13 +96,13 @@ class Admin extends Component{
                     <path className="st1" d="M15,45 L15,45 L15,45" stroke={color} strokeWidth="5" />
                     </Anime>
                     </svg>
-                    <form className="KamilaForm" onSubmit={this.authenticate}>
+                    {/* <form className="KamilaForm" onSubmit={this.authenticate}>
                         <h1> Zaloguj sie do Panelu Administratora!</h1>
                         <input style={adminCss}type="text" placeholder="email" id="email" name="email" className="form-control" onChange={this.handleLoginChange} value={this.state.email}></input>
                         <input style={adminCss}type="password" id="password" name="password" className="form-control" onChange={this.handleLoginChange} placeholder="********" value={this.state.password}></input>
                         <button type="submit" className="btn btn-danger KamilaButt">Log in</button>
-                    </form>  
-             
+                    </form>   */}
+                    <AdminPanel/>
                 </DelayedComponent>   
                <h2 className="KamilaNagl">Zaloguj się jako Uzytkownik!</h2>
         </div>

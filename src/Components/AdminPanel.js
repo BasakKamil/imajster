@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fbase from '../fbase';
 
 class AdminPanel extends Component{
 constructor(){
@@ -11,9 +12,9 @@ constructor(){
             OnStock: true,
             image: ""
 
-        }
+        },
         // Tablica gdzie będe trzymał produkty -przeniesiona do App
-        // products : []
+        products : []
     };
 
 
@@ -40,15 +41,16 @@ handleCHange = (event) => {
     });
 }
 
-addNewProduct= (event) => {
+addNewProduct = (event) => {
     //Załatwia ze strona nie bedzie sie przeładowywać po nacisnieciu Add 
     event.preventDefault();
     // Tworze kopie swojego stanu by moc ja akytualizowac
     let newProduct = {...this.state.product};
     //Funkcja podpieta pod komponent w APP - przkazywanie props 
-    this.props.addProduct(newProduct);
+    // this.props.addProduct(newProduct);
 
     this.setState({
+        products: [...this.state.products, newProduct],
         product:{
             name : "",
             category : "",
@@ -59,7 +61,27 @@ addNewProduct= (event) => {
         }
     });
 
+    if(Array.isArray(this.state.products)){
+        this.setState({
+                products: [...this.state.products, newProduct] 
+        });
+        } else{
+            this.setState({products: [newProduct]}); 
+        }
 
+
+}
+
+// Podpiecie Bazy Danych z obecnymi Stanami 
+componentDidMount(){
+    this.ref = fbase.syncState('store/products',{
+        context: this,
+        state: 'products'
+    });
+}
+
+componentWillUnmount(){
+   fbase.removeBinding(this.ref);
 }
 
 render(){

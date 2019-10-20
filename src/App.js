@@ -13,9 +13,10 @@ import HomeFooter from './Components/HomeFooter';
 // import video from './Components/Film/2.mp4';
 // import { VideoTexture } from 'three';
 import Foto1 from './Components/BOX/oskar.jpg';
-import AdminPanel from './Components/Admin/AdminPanel';
-
-
+// import AdminPanel from './Components/Admin/AdminPanel.js';
+import Inventory from './Components/Inventory.js';
+import Order from './Components/order.js';
+import anime from 'animejs';
 
 
 
@@ -28,13 +29,25 @@ class App extends React.Component {
     this.state = {position: { x: 0, y: 0, z: 0 },
                   rotation: { x: 0, y: 0, z: 0 },
                   scale: { x: 3, y: 3, z: 3 },
-                  products: []
+                  products: [],
+                  order: []
           
                 }
                   
   }
 
+  addToOrder = (product) => {
+      this.setState({
+          order: [...this.state.order, product]
+      });
 
+  }
+  removeFromOrder = (title) => {
+      this.setState({
+          order: this.state.order.filter(product => title!==product.name)
+      });
+    
+  }
   // FUNCTION FOR SAVE VALUES FORM INPUTS
   stateUpdate = (event, direction, axis, ajustFunc) => {
     // CHANGING EVENT TO MOUSE DATA IF...
@@ -47,6 +60,13 @@ class App extends React.Component {
 
   // FUNCTION TO DO STAFF BEFORE RENDERING ELEMENTS
   componentDidMount = () => {
+
+    this.animation = anime({
+      targets: '',
+      translateX: 250,
+      rotate: '1turn'
+    });
+
     this.width = this.mount.clientWidth;
     this.height = this.mount.clientHeight;
     //ADD RENDERER
@@ -218,15 +238,7 @@ toggle = e => this.setState({
   showMenuButton: this.state.showMenuButton
 });
 
-addNewProduct = (product) => {
-  let newProducts = [...this.state.products];
 
-  newProducts.push(product);
-
-  this.setState({
-      products: newProducts
-  });
-}
   render() {
 
     return (
@@ -236,7 +248,8 @@ addNewProduct = (product) => {
                 <div className="BodyBox2"> <NewCanvas/> </div>
               <Footer/>
               <HomeFooter/>
-              <AdminPanel products={this.state.products} addProduct={this.addNewProduct}/>
+              <Inventory products={this.state.products} addToOrder={this.addToOrder}/>
+              <Order order={this.state.order} removeFromOrder={this.removeFromOrder} />
             </div>
             )
     

@@ -1,16 +1,15 @@
 import React,{Component} from 'react';
-import { TimelineLite, TweenLite, Power2 } from 'gsap';
-// import * as ScrollMagic from 'scrollmagic'
-// import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min'
+import { TimelineLite, TweenLite, Power1 } from 'gsap';
+import ScrollMagic from "scrollmagic";
+
 
 
 class newCanvas extends Component{
     constructor(){
         super();
         this.state = { name: 'iPhone' };
-        this.tl = new TimelineLite({paused: true});  
-        //  this.controller = new ScrollMagic.Controller(); 
-        this.tween2 = new TimelineLite();
+        this.controller = new ScrollMagic.Controller(); 
+        this.tween2 = new TimelineLite({paused: false});
         this.flightPath2 = {
             curviness: 1.5,
             autoRotate: false,
@@ -25,27 +24,36 @@ class newCanvas extends Component{
                 {x:window.innerWidth/1.25, y: 10}
     
             ]
-        }
-        this.handleClick = this.tl.play();        
+        }   
     }
 componentDidMount(){
+    this.tween2.add(
+        TweenLite.to('.iPhoneFly',3,{
+            bezier: this.flightPath2,
+            ease: Power1.easeInOut 
 
+        })
+    );
+    
+    
+    this.scene = new ScrollMagic.Scene({
+        triggerElement: "#new", 
+        duration: 3000
+        // trigerHook: 1
+    })
+    .setTween(this.tween2)
+    .addIndicators() // add indicators (requires plugin)
+    .setPin("#new")
+    .addTo(this.controller);
         // Animacja w GSAP
-        this.tween2.add(
-            TweenLite.to('.iPhoneFly',3,{
-                bezier: this.flightPath2,
-                ease: Power2.easeInOut 
-    
-            })
-    
-        )
+        
 }
 
     render(){
 
 
         return(
-                   <div className="newCanvas">
+                   <div className="newCanvas" id="new">
                         <nav className="nav-closed">
                         <h3>What we can Repair for you ?</h3>
                         <ul className="nav-links">
