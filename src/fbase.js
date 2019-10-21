@@ -1,8 +1,8 @@
-import Rebase from 're-base';
+
 import firebase from 'firebase';
 
  // Kofiguracja FIREBASE - BAZY DANYCH 
-var firebaseApp = firebase.initializeApp({
+export const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyBlKjd_saYzXu9dbhV9HtCqXr17PGr8tYs",
     authDomain: "imajster-1ecc3.firebaseapp.com",
     databaseURL: "https://imajster-1ecc3.firebaseio.com",
@@ -13,6 +13,5 @@ var firebaseApp = firebase.initializeApp({
     measurementId: "G-1T9VQ58EYW"
 });
 
-const fbase = Rebase.createClass(firebaseApp.database());
+export default firebaseApp
 
-export default fbase;

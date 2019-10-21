@@ -14,9 +14,8 @@ import HomeFooter from './Components/HomeFooter';
 // import { VideoTexture } from 'three';
 import Foto1 from './Components/BOX/oskar.jpg';
 // import AdminPanel from './Components/Admin/AdminPanel.js';
-import Inventory from './Components/Inventory.js';
-import Order from './Components/order.js';
 import anime from 'animejs';
+
 
 
 
@@ -36,18 +35,7 @@ class App extends React.Component {
                   
   }
 
-  addToOrder = (product) => {
-      this.setState({
-          order: [...this.state.order, product]
-      });
 
-  }
-  removeFromOrder = (title) => {
-      this.setState({
-          order: this.state.order.filter(product => title!==product.name)
-      });
-    
-  }
   // FUNCTION FOR SAVE VALUES FORM INPUTS
   stateUpdate = (event, direction, axis, ajustFunc) => {
     // CHANGING EVENT TO MOUSE DATA IF...
@@ -248,8 +236,6 @@ toggle = e => this.setState({
                 <div className="BodyBox2"> <NewCanvas/> </div>
               <Footer/>
               <HomeFooter/>
-              <Inventory products={this.state.products} addToOrder={this.addToOrder}/>
-              <Order order={this.state.order} removeFromOrder={this.removeFromOrder} />
             </div>
             )
     

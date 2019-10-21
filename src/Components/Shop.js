@@ -4,18 +4,32 @@ import { Spring } from 'react-spring/renderprops';
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import { TimelineLite, TweenLite, Power2 } from 'gsap';
 import Api from './Button/api';
-
-
+import Inventory from './Inventory';
+import Order from './order.js';
 
 class Shop extends Component{
   constructor(props) {
     super(props);
     this.state = {
-        email: "Bastric91@gmail.com"
+        email: "Bastric91@gmail.com",
+        products: [],
+        order: []
+          
     }
 
 }
+addToOrder = (product) => {
+  this.setState({
+      order: [...this.state.order, product]
+  });
 
+}
+removeFromOrder = (title) => {
+  this.setState({
+      order: this.state.order.filter(product => title!==product.name)
+  });
+
+}
 
   render(){
   
@@ -66,29 +80,8 @@ class Shop extends Component{
     dateText="11/2010 – Present"
     style={{ color: '#e86971' }}
   >
-    <h3>Title, Company</h3>
-    <h4>Subtitle</h4>
-    <p>
-      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-      est.
-    </p>
-    <p>
-      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-      est.
-    </p>
-    <p>
-      Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-      exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-      nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-      reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-      est.
-    </p>
+         <Inventory products={this.state.products} addToOrder={this.addToOrder}/>
+          
   </TimelineItem>
   <TimelineItem
     key="002"
@@ -106,10 +99,7 @@ class Shop extends Component{
     <h4 style={{ color: '#61b8ff' }}>Subtitle</h4>
     <p className="Products row">
                         <h2>Produkty:</h2>
-                        <p className="GridKamil col-5"> 1 Grid</p>
-                        <p className="GridKamil col-5"> 2 Grid</p>
-                        <p className="GridKamil col-5"> 2 Grid</p>
-                        <p className="GridKamil col-5"> 2 Grid</p>
+                        <Order order={this.state.order} removeFromOrder={this.removeFromOrder} />
             </p>
     <p>
       <button id="Kamciu">Klik!</button>
