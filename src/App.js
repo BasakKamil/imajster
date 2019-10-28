@@ -29,11 +29,11 @@ class App extends React.Component {
                   rotation: { x: 0, y: 0, z: 0 },
                   scale: { x: 3, y: 3, z: 3 },
                   products: [],
-                  order: []
-          
+                  order: []    
                 }
                   
   }
+
 
 
   // FUNCTION FOR SAVE VALUES FORM INPUTS
@@ -48,6 +48,7 @@ class App extends React.Component {
 
   // FUNCTION TO DO STAFF BEFORE RENDERING ELEMENTS
   componentDidMount = () => {
+  
 
     this.animation = anime({
       targets: '',

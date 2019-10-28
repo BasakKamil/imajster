@@ -8,6 +8,7 @@ import Services from './Services';
 import Cv from './CV';
 import AdminPanel from './AdminPanel';
 import ProductView from './ProductView';
+import UserForm from './User/UserForm';
 
 export default class Router extends Component {
 
@@ -20,7 +21,7 @@ export default class Router extends Component {
                     <Route exact path='/shop' component={Shop}/>
                     <Route exact path='/contact' component={Contact}/>
                     <Route exact path='/services' component={Services}/>
-                    {/* <Route exact path='/admin' component={Admin}/> */}
+                    <Route exact path='/userform' component={UserForm}/>
                     <Route exact path='/cv' component={Cv}/>
                     <Route exact path='/admin' component={AdminPanel}/>
                     <Route exact path='/ProductView' component={ProductView}/>

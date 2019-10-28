@@ -3,6 +3,7 @@ import * as ScrollMagic from "scrollmagic";
 import Header from './Header';
 import { TimelineLite, TweenLite } from 'gsap';
 // import Foto from '../Components/BOX/slub.jpg';
+import Api from './Button/api';
 
 class Contact extends Component{
 
@@ -67,7 +68,8 @@ class Contact extends Component{
                 <div id="CallMeBaby">
                    <div className="KamilBCall">
                     <h1 className={this.state.class}>Call me! {this.state.title}</h1>
-
+                             
+                    <Api/>
                   
                     <p>Polerum lelum  olerum lelum  olerum lelum  olerum lelum olerum lelum olerum lelum olerum lelum volerum lelum </p>
                     

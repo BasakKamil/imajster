@@ -3,7 +3,6 @@ import Header from './Header';
 import { Spring } from 'react-spring/renderprops';
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import { TimelineLite, TweenLite, Power2 } from 'gsap';
-import Api from './Button/api';
 import Inventory from './Inventory';
 import Order from './order.js';
 
@@ -176,8 +175,7 @@ removeFromOrder = (title) => {
   
   </TimelineItem>
 </Timeline>
-         
-<Api/>
+
         </div>
 
         );

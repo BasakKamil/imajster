@@ -53,6 +53,18 @@ $font-family2: 'Monoton', cursive;
  
  }
 
+ .FootCont{
+  width: 50%;
+  float: right;
+  display: flex;
+  p{width: 100%;}
+}
+.class{
+  width: 50%;
+  float: left;
+  display: flex;
+
+}
 #HomeCanvas{
   background-image: linear-gradient(to right, #434343 0%, black 100%);
     svg{
@@ -124,8 +136,12 @@ padding: 1%;
 margin: 2%;
 }
 .BodyBox2{
-background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 min-height: 250px;
+
+}
+.sto{
+  fill:#231F20;
 
 }
 .container-fluid{
@@ -207,9 +223,10 @@ margin-top: 10% !important;
   z-index: 99999999999999999;
   display: block;
   min-height: 80px;
+  z-index: 99999999999;
   position: fixed;
   width: 100%;
-  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
 
   .Uno{
   margin-left: 0;
@@ -217,6 +234,7 @@ margin-top: 10% !important;
       button:nth-child(1){
         right: 10%;
         position: absolute; 
+        z-index: 9999999999999999999999999999999;
         a{
         text-decoration: none;
         font-family: "Monoton", cursive !important;
@@ -225,16 +243,58 @@ margin-top: 10% !important;
       }
       button:nth-child(2){
         left: 10%;
-        position: absolute;
         font-family: "Monoton", cursive !important;
         color: black;
         font-weight: bold;
+        z-index: 9999999999999999999999999999999;
         background-image: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
       }
 
   }
 }
+.clock::before{
+content: '';
+position: absolute;
+width: 15px;
+height: 15px;
+background: brown;
+z-index: 100000;
+border: 2px solid #fff;
+}
+.clock{
+width: 300px;
+height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fff;
+border-radius: 50%;
+border: 10px solid black;
 
+
+.hour{
+  .hr::before{content: '';position: absolute;width:8px;height: 80px;background: grey;z-index: 10;border-radius: 6px 6px 0 0;}
+  .mn::before{content: '';position: absolute;width:4px;height: 90px; background: #9795f0; z-index: 11; border-radius: 6px 6px 0 0;}
+  .sc::before{content: '';position: absolute;width:2px;height: 100px; background: #e14fad; z-index: 12; border-radius: 6px 6px 0 0;}
+  .hour{
+    .hr{
+    display: flex;justify-content: center;position: absolute;border-radius: 50%;width: 160px;height: 160px;
+    }}
+  .min{
+    .mn{display: flex;justify-content: center;position: absolute;border-radius: 50%;width:190px;height: 190px;}
+    }
+  .sec{
+    .sc{display: flex;justify-content: center;position: absolute;border-radius: 50%;width:230px;height: 230px;}
+    }
+}
+
+
+}
+.ApiBackExpress{
+text-align: center;
+margin-top: 3%;
+
+}
 .AdminPanelAdd{
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   margin: 10%;
@@ -430,20 +490,33 @@ body {
   .KamciaButton{
     margin-left: 1%;
     margin-right: 1%;
+    svg{
+      z-index: 999999999999999999999999999999;
+    
+    }
   }
   .ShopiMajster{
     margin: 0;
     padding: 0;
     }
+  .Koszyk{
+        width: 3%;  
+        background: none;
+        border: 1px solid white;
+    
+    }
   .LogoiMajster {
+    z-index: 9;
     background: none;
     text-align: center;
+    max-height: 10px;
     width: 100%;
+    top: 8%;
     left: 0;
     animation: fill 0.5s ease forward 3s;
     path:nth-child(1){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 0.6s}
     path:nth-child(2){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 0.9s}
-    path:nth-child(3){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.2}
+    path:nth-child(3){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.2s}
     path:nth-child(4){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.5s}
     path:nth-child(5){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 1.8s}
     path:nth-child(6){ stroke-dasharray: 50px; stroke-dashoffset: 10px;animation: line-anim 2s ease forwards 2.1s}
@@ -455,6 +528,8 @@ body {
     }
     svg {
     background: none;
+    top: 8%;
+    z-index: 1;
     fill: none;
     width: 40%;
     max-height: 50px;
@@ -503,11 +578,40 @@ body {
     }
   }  
 } 
-    .AdminMajster{
+.NewLogin{
+
+    width: 100%;
+    text-align: left;
+    padding: 5%;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+}  
+
+.Step1{
+  div:nth-child(1){
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    }
+h1{
+  text-align: left;
+}
+h1{display: none;}
+
+}
+.AdminMajster{
+  
+      background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
       .KamilaForm{
         z-index: 999;
         position: relative;
         text-align: center;
+        width: 100%;
+        padding: 5%;
+        input{
+          width: 98%;
+          margin: 1%;
+          text-align: center;
+        }
         h1{
           margin-top: 5%;
           margin-bottom: 5%;
@@ -515,7 +619,6 @@ body {
       } 
       h2{
         text-align: center;
-        width: 30%;
         margin-top: 5%;
         color: crimson;
       }
