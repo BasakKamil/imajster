@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import fbase from '../base.js';
 import firebaseApp from '../fbase.js';
-
 export class AddBookForm extends Component {
 
     // eslint-disable-next-line no-useless-constructor
@@ -15,7 +14,9 @@ export class AddBookForm extends Component {
                 category : "",
                 description: "",
                 OnStock: true,
-                image: ""
+                image: "",
+                type: "",
+                price: ""
             }
         };
     }
@@ -70,7 +71,9 @@ export class AddBookForm extends Component {
                 category : "",
                 description: "",
                 OnStock: true,
-                image: ""
+                image: "",
+                type: "",
+                price: ""
         
             }
         });
@@ -119,6 +122,19 @@ export class AddBookForm extends Component {
             </div>
             <div className="form-group">
                 <input type="text" placeholder="image" id="image" name="image" onChange={this.handleCHange}  className="form-control" value={this.state.product.image} />
+            </div>
+            <div className="form-group">
+                <select type="select" placeholder="type" id="type" name="type" onChange={this.handleCHange}  className="form-control" value={this.state.product.type} >
+                    <option value="iphone5">iPhone 5</option>
+                    <option value="iphone6">iPhone 6</option>
+                    <option value="iphone7">iPhone 7</option>
+                    <option value="iphone8">iPhone 8</option>
+                    <option value="iphoneX">iPhone X</option>
+                    <option value="iphoneSX">iPhone XS</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <input type="text" placeholder="price" id="price" name="price" onChange={this.handleCHange}  className="form-control" value={this.state.product.price} />
             </div>
             <button type="submit" className="btn btn-danger">Add</button>
             </form>

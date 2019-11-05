@@ -4,6 +4,7 @@ import ScrollMagic from "scrollmagic";
 
 
 
+
 class newCanvas extends Component{
     constructor(){
         super();

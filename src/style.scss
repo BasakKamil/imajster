@@ -19,12 +19,38 @@ $font-family2: 'Monoton', cursive;
   animation: Gradient 15s ease infinite;
   }
 .Dolce{
-  
     text-align: center;
     background-color: black;
     border-radius: 10px;
-
-
+}
+.NewP{
+  
+  margin: 5%;
+  padding: 5%;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  b{
+    background-color: black;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  i{
+    background-color: #ffc107;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.Pp{
+  color: black;
+  font-size: 30px;
+  background: lightgoldenrodyellow;
+  text-align: center;
 }
   .KamilBCall{
     display: block;
@@ -433,7 +459,7 @@ body {
     width: 98%;
   }
   
-  .FootBasi{
+  .FootBasi {
     width: 100%;
     display: inline-block;
     height: 100%;
@@ -443,16 +469,11 @@ body {
     text-align: center;
     background-color: $blackColor;
     z-index: 9999999999999999;
-  }
-  
-  .FootBasi {
-
-    a{
-      width: 20%;
-      float: left;
-      display: block;
-    }
-   
+        a{
+          width: 20%;
+          float: left;
+          display: block;
+        }
         p{
           padding: 0;
           width: 100%;
@@ -460,6 +481,8 @@ body {
           font-family: $font-family2 !important;
           letter-spacing: 2px;
           color: yellow;
+          padding-top: 3%;
+          padding-bottom: 3%;
           }
   }
   .KamilaMenu{ 
@@ -494,6 +517,15 @@ body {
       z-index: 999999999999999999999999999999;
     
     }
+  }
+
+  #faceKamil{
+    text-align: center;
+    img{
+      text-align: center;
+      width: 60%;
+      margin: 0 auto;
+      }
   }
   .ShopiMajster{
     margin: 0;

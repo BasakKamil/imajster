@@ -9,6 +9,7 @@ class Inventory extends Component{
         this.state = {
             products: []
         };
+        
     };
     
         
