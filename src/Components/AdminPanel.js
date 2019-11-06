@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import UserForm from './User/UserForm.js';
 import LoginPanel from './LoginPanel.js';
 import AddBookForm from './AddBookForm.js';
-
+import ShowProducts from './ShowProducts.js';
+import fbase from '../base';
 
 class AdminPanel extends Component{
 constructor(){
@@ -10,7 +11,9 @@ constructor(){
     this.state = {
         // Express Login- backend
         apiResponse : "",
-        loggedIn : false  
+        loggedIn : false ,
+        products: []
+     
     };
 
 
@@ -31,6 +34,10 @@ callAPI(){
 // // Podpiecie Bazy Danych z obecnymi Stanami 
 componentDidMount(){
     this.callAPI();
+    this.ref = fbase.syncState('store/products',{
+        context: this,
+        state: 'products'
+    });
 
 }
 
@@ -39,7 +46,9 @@ changeLoggedIn = (newValue) => this.setState({loggedIn: newValue})
 render(){
     // const { background = 'yellow' } = this.props;
 
-
+    const productShow =  this.state.products.map(product => {
+        return <ShowProducts product={product} />
+    });
 
 return(
 <div className="Logowanie">
@@ -53,9 +62,15 @@ return(
         />
     }
     {this.state.loggedIn &&
+        <div>
         <AddBookForm 
         changeLoggedIn = {this.changeLoggedIn}
         />
+            <div class="Stm">
+                <h2>Stan magazynowy:</h2>
+                {productShow}
+            </div>
+        </div>
 }
 
 
