@@ -22,6 +22,13 @@ $font-family2: 'Monoton', cursive;
     text-align: center;
     background-color: black;
     border-radius: 10px;
+    color: white;
+}
+.Frank{
+  text-align: center;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
 }
 .NewP{
   
@@ -79,11 +86,23 @@ $font-family2: 'Monoton', cursive;
  
  }
 
+ #instaKamil{
+   width: 50%;
+   img{
+     width: 65%;
+    }
+ }
+
  .FootCont{
-  width: 50%;
+  width: 70%;
   float: right;
   display: flex;
-  p{width: 100%;}
+  div{
+    p{width: 100%;}
+
+  }
+  p{width: 30%;
+    margin: 0 auto;}
 }
 .class{
   width: 50%;
@@ -519,10 +538,12 @@ body {
   }
 
   #faceKamil{
+    width: 50%;
     text-align: center;
+    margin: 0 auto;
     img{
       text-align: center;
-      width: 60%;
+      width: 65%;
       margin: 0 auto;
       }
   }
@@ -666,4 +687,17 @@ h1{display: none;}
   .Stm{
     background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
     text-align: center;
+    padding: 1%;
   }
+  .AdminPV{
+    width: 95%;
+    padding: 2%;
+    border: 1px solid black;
+    margin: 2%;
+  }
+  .NoweKam{
+    border: none;
+    padding: 2px;
+    border-radius: 5px;
+    margin-left: 10%;
+}

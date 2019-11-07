@@ -13,6 +13,7 @@ import HomeFooter from './Components/HomeFooter';
 // import video from './Components/Film/2.mp4';
 // import { VideoTexture } from 'three';
 import Foto1 from './Components/BOX/oskar.jpg';
+import foto2 from './Components/BOX/star.png';
 // import AdminPanel from './Components/Admin/AdminPanel.js';
 import anime from 'animejs';
 
@@ -24,13 +25,18 @@ class App extends React.Component {
   
   constructor(props) {
     super(props);
+    this.animate = this.animate.bind(this);
+
+
     // STATE FOR UPDATING INPUTS VALUE AND SET MODEL POSITION
     this.state = {position: { x: 0, y: 0, z: 0 },
                   rotation: { x: 0, y: 0, z: 0 },
                   scale: { x: 3, y: 3, z: 3 },
                   products: [],
-                  order: []    
+                  order: [], 
+                  showMenuButton: false
                 }
+                
                   
   }
 
@@ -46,9 +52,20 @@ class App extends React.Component {
     }, () => ajustFunc(direction, axis));
   };
 
+
+    animate = () => {
+    this.frameId = window.requestAnimationFrame(this.animate);
+    this.renderer.render(this.scene, this.camera);
+
+    this.cube.rotation.y += 0.05;
+    this.starsGeo.vertices.forEach(p=>{
+      p.velocity += p.acceleration;
+    });
+   
+  }
   // FUNCTION TO DO STAFF BEFORE RENDERING ELEMENTS
   componentDidMount = () => {
-  
+   
 
     this.animation = anime({
       targets: '',
@@ -60,14 +77,16 @@ class App extends React.Component {
     this.height = this.mount.clientHeight;
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({antialias: true});
-    this.renderer.setClearColor('#dbdbdb');
+    this.renderer.setClearColor('#0a2510');
     this.renderer.setSize(this.width,this.height);
     this.renderer.gammaFactor = 1.5;
     this.renderer.gammaOutput = true;
     this.mount.appendChild(this.renderer.domElement);
 
     //ADD CAMERA
-    this.camera = new THREE.PerspectiveCamera( 90, this.width / this.height, 0.1, 1000 );
+    this.camera = new THREE.PerspectiveCamera( 90, this.width / this.height, 0.1, 1500 );
+    
+  
 
     //ADD SCENE
     this.scene = new THREE.Scene();
@@ -75,14 +94,16 @@ class App extends React.Component {
       //ADD VIDEO
       
       
-   
       // this.VideoTexture = new THREE.VideoTexture(video);
       // this.VideoTexture.minFilter = THREE.LinearFilter;
       // this.VideoTexture.magFilter = THREE.LinearFilter;
       // this.VideoTexture.format = THREE.RGBAFormat;
 
-      this.geometry = new THREE.BoxGeometry( 600, 600, 600 );
 
+  
+
+        // Tu zaczyna sie pudło 
+        this.geometry = new THREE.BoxGeometry( 800, 800, 800 );
       // this.material = [
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
@@ -91,6 +112,7 @@ class App extends React.Component {
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})})
       // ];
+
       this.material = [
         new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
         new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.TextureLoader().load(Foto1), side: THREE.DoubleSide}),
@@ -101,9 +123,32 @@ class App extends React.Component {
       ];
    
       this.cube = new THREE.Mesh( this.geometry, this.material );
-      this.cube.position.z = -100;
+      this.cube.position.z = -120;
       this.scene.add( this.cube );
-     
+      this.animate();
+
+    //  Tu dodaje gwiazdy
+      this.starsGeo = new THREE.Geometry();
+      for(let i=0; i<6000;i++){
+        this.star = new THREE.Vector3(
+          Math.random() * 600 - 300,
+          Math.random() * 600 - 300,
+          Math.random() * 600 - 300
+        );
+        this.star.valocity = 0;
+        this.star.acceleration = 0.02;
+        this.starsGeo.vertices.push(this.star);
+      }
+
+        this.starsMaterial = new THREE.PointsMaterial({
+            color: 0xffc107,
+            size: 0.7,
+            map: new THREE.TextureLoader().load(foto2)
+        });
+        
+        this.stars = new THREE.Mesh(this.starsGeo, this.starsMaterial);
+   
+        this.scene.add(this.stars);
 
 
     // LIGHT
@@ -138,7 +183,7 @@ class App extends React.Component {
 
     // ORBIT CONTROL
     this.orbit = new OrbitControls( this.camera, this.renderer.domElement );
-    this.camera.position.set( 200, 2, 2 );
+    this.camera.position.set( 220, 22, 2 );
     this.orbit.update();
 
 
@@ -147,6 +192,7 @@ class App extends React.Component {
 
     // ADD LOADER FROM NPM FOLDER
     this.loader = new GLTFLoader();
+    this.animate();
 
     // LODING GLB FILE FROM SRC FOLDER
     this.loader.load(fileGlb, gltf => {
@@ -169,7 +215,7 @@ class App extends React.Component {
     error => {
       console.log(error);
     });
-
+ 
   };
 
   // UPDATE REACT STATE AND INPUT VALUE
@@ -181,6 +227,7 @@ class App extends React.Component {
       });
     };
   }
+
 
 
   // GETING DATA FORM SELECT ELEMENT TO SET POSITION SCALE OR ROTATION IN TRANSFORMCONTROL
@@ -219,8 +266,11 @@ class App extends React.Component {
     this.gltf[direction][axis] = this.state[direction][axis];
     this.renderer.render(this.scene, this.camera);
   };
-  state = {
-    showMenuButton: false
+  animate = () =>{
+    this.frameId = window.requestAnimationFrame(this.animate);
+    this.renderer.render(this.scene, this.camera);
+
+    this.cube.rotation.y += 0.005;
   }
 
 toggle = e => this.setState({

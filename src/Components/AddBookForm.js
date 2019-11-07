@@ -64,6 +64,7 @@ export class AddBookForm extends Component {
         //Funkcja podpieta pod komponent w APP - przkazywanie props 
         // this.props.addProduct(newProduct);
     
+
         this.setState({
             products: [...this.state.products, newProduct],
             product:{
@@ -84,8 +85,8 @@ export class AddBookForm extends Component {
             });
             } else{
                 this.setState({products: [newProduct]}); 
-    }
-    
+            }
+        
     }
     logout = (event) => {
         event.preventDefault();

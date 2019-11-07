@@ -3,11 +3,13 @@ import ProductView from './ProductView.js';
 import fbase from '../base';
 
 
+
 class Inventory extends Component{
     constructor(){
         super();
         this.state = {
-            products: []
+            // usunięte ze wzgledu na przypadek braku produktów na stanie - wyskakiwal bład
+            // products: []
         };
         
     };
@@ -26,11 +28,19 @@ class Inventory extends Component{
 
 
     render(){
+        let productListing ;
+// Spr czy nasz stan produktów jest tablica czyli czy jest cos na stanie, jezeli tak to:
+    if(Array.isArray(this.state.products)){
+        productListing =  this.state.products.map(product => {
+            return <ProductView product={product} addToOrder={this.props.addToOrder}/>
+        });
+    }
+    else{
+        //  Jezeli nie to wyswietli nams ie to:
+        productListing = <h4>Nie ma nic na Stanie! </h4>
+    }    
+    
 
-
-    const productListing =  this.state.products.map(product => {
-        return <ProductView product={product} addToOrder={this.props.addToOrder}/>
-    });
 
 
 

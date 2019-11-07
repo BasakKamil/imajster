@@ -21,8 +21,14 @@ this.state = {
     return (
         <div className="HomeFooter">
             <div className="FootCont">
-              <div><h4>Phone Numher:</h4>
-              796 895 079
+              <div>
+                <p><h4>Phone Number:</h4>
+                796 895 079</p>
+                <p><h4>E-Mail:</h4>
+                Bastric91@gmail.com</p>
+                <p><h4>My website:</h4>
+                www.imajster.com</p>
+
               
               </div>
               <p><Facebook fotoStaff1={Foto1} /></p>

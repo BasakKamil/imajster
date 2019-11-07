@@ -71,11 +71,11 @@ class Contact extends Component{
                              
                     <Api/>
                   
-                    <p>Polerum lelum  olerum lelum  olerum lelum  olerum lelum olerum lelum olerum lelum olerum lelum volerum lelum </p>
+              
                     
                  
                    {/* <img style={Fociszka} src={Foto} /> */}
-                   <button className="But">Click</button>
+           
                    </div>
                 </div>
             </div>

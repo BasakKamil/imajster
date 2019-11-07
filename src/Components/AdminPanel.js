@@ -43,12 +43,21 @@ componentDidMount(){
 
 changeLoggedIn = (newValue) => this.setState({loggedIn: newValue}) 
 
+removeFromInventory = (title) => {
+    this.setState({
+        products: this.state.products.filter(product => title!==product.name)
+    });
+  
+  }
+
 render(){
     // const { background = 'yellow' } = this.props;
 
-    const productShow =  this.state.products.map(product => {
-        return <ShowProducts product={product} />
-    });
+
+    // Zamiast  <ShowProducts product={this.state.product}/> moze byc: 
+    // const productShow =  this.state.products.map(product => {
+    //     return <ShowProducts product={product} />
+    // });
 
 return(
 <div className="Logowanie">
@@ -68,13 +77,11 @@ return(
         />
             <div class="Stm">
                 <h2>Stan magazynowy:</h2>
-                {productShow}
+                <ShowProducts products={this.state.products} removeFromInventory = {this.removeFromInventory} />
+                {/* {productShow} */}
             </div>
         </div>
-}
-
-
-
+    }
     <div className="ApiBackExpress">{this.state.apiResponse}</div>
 </div>
 )
