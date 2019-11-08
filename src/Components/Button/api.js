@@ -20,8 +20,8 @@ class Api extends Component{
               const proxy = 'http://cors-anywhere.herokuapp.com/';
               const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/37.8267,-122.4233`;
               let fr = 'a/chf';
-              const frank = `http://api.nbp.pl/api/exchangerates/rates/${fr}/?format=json`;
-              const dol = 'http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json';
+              const frank = `${proxy}http://api.nbp.pl/api/exchangerates/rates/${fr}/?format=json`;
+              const dol = `${proxy}http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json`;
             
                  fetch(api)
                  .then(response => response.json())
