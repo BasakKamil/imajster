@@ -12,39 +12,48 @@ class Api extends Component{
         // .then(response => response.json())
         // .then(json => this.setState({ contacts: json.results }));
         // }
-    
-  
-         const proxy = 'http://cors-anywhere.herokuapp.com/';
-         const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/37.8267,-122.4233`;
-            fetch(api)
-            .then(response => response.json())
-            //  .then(data => console.log(data))
-             .then(data=>{
-  
-              const temperature = data.currently.temperature;
-              console.log(temperature);
-              document.querySelector('.Tempka').innerHTML = temperature;;  
-
+       
+           let xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+              // Check if the XMLHttpRequest object has a "withCredentials" property.
+              // "withCredentials" only exists on XMLHttpRequest2 objects.
+              const proxy = 'http://cors-anywhere.herokuapp.com/';
+              const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/37.8267,-122.4233`;
+              let fr = 'a/chf';
+              const frank = `http://api.nbp.pl/api/exchangerates/rates/${fr}/?format=json`;
+              const dol = 'http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json';
+            
+                 fetch(api)
+                 .then(response => response.json())
+                 //  .then(data => console.log(data))
+                  .then(data=>{
+       
+                   const temperature = data.currently.temperature;
+                   console.log(temperature);
+                   document.querySelector('.Tempka').innerHTML = temperature;;  
+     
+                  });
+         
+                 fetch(frank)
+                 .then(res=> res.json())
+                 .then(
+                  arr=> {
+                  const kurs = arr.rates[0].mid;
+                  document.querySelector('.Frank').innerHTML = kurs; 
+                 });
+     
+                 fetch(dol)
+                 .then(res=> res.json())
+                 .then(
+                 arr=>{
+                 const course =  arr.rates[0].bid;
+                 document.querySelector('.Dolce').innerHTML = course; 
              });
-        let fr = 'a/chf';
-        const frank = `http://api.nbp.pl/api/exchangerates/rates/${fr}/?format=json`;
-        const dol = 'http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json';
-      
-            fetch(frank)
-            .then(res=> res.json())
-            .then(
-             arr=> {
-             const kurs = arr.rates[0].mid;
-             document.querySelector('.Frank').innerHTML = kurs; 
-            });
-
-            fetch(dol)
-            .then(res=> res.json())
-            .then(
-            arr=>{
-            const course =  arr.rates[0].bid;
-            document.querySelector('.Dolce').innerHTML = course; 
-        });
+             
+            } 
+       
+        
+        
     
     }
 
