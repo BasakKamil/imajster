@@ -57,8 +57,8 @@ export class LoginPanel extends Component {
 
     render() {
 
-        const {anime} = this.props;
-        console.log(anime);
+        
+     
 
         return (
             <div className="AdminMajster">      

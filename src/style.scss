@@ -498,7 +498,25 @@ body {
      }
   }
   
- 
+ .MyCv{
+  position: relative;
+  .AdminMajster {
+    background-image: none;
+  }
+
+  .WitamywCv{
+    transform: translateX(0px);
+    position: fixed;
+    left: -100px;
+    
+      transform: translateX(960px);
+      background-color: black;
+      color: white;
+      padding: 5%;
+      font-size: 25px;
+  
+}
+ }
   .MainCointainer{
   background: $blackColor;
   width:100%;
