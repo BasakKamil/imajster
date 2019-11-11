@@ -12,7 +12,7 @@ import NewCanvas from './Components/newCanvas.js';
 import HomeFooter from './Components/HomeFooter';
 // import video from './Components/Film/2.mp4';
 // import { VideoTexture } from 'three';
-import Foto1 from './Components/BOX/oskar.jpg';
+import Foto1 from './Components/BOX/cosmos.jpg';
 import foto2 from './Components/BOX/star.png';
 // import AdminPanel from './Components/Admin/AdminPanel.js';
 import anime from 'animejs';

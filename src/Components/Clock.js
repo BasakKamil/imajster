@@ -30,15 +30,15 @@ export class Clock extends Component {
 
     render() {
         return (
-            <div class="clock" id="clock">
-                <div class="hour">
-                        <div class="hr" id="h"></div>
+            <div className="clock" id="clock">
+                <div className="hour">
+                        <div className="hr" id="h"></div>
                 </div>
-                <div class="min">
-                        <div class="mn" id="m"></div>
+                <div className="min">
+                        <div className="mn" id="m"></div>
                 </div>
-                <div class="sec">
-                        <div class="sc" id="s"></div>
+                <div className="sec">
+                        <div className="sc" id="s"></div>
                 </div>
             </div>
         )

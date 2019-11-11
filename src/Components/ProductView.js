@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 class ProductView extends Component{
 render(){
 return(
-<div class="row">
+<div className="row">
 <div className="NewP col">
     <b>{this.props.product.name}</b>
     <i>{this.props.product.category}</i>

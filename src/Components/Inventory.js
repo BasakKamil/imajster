@@ -45,9 +45,9 @@ class Inventory extends Component{
 
 
     return(
-        <div className="Inve">
-            <h1>SKLEP</h1>
-            { productListing }
+        <div className="InvContainer">
+           <div><h1>SKLEP</h1></div> 
+           <div className="Inve">{ productListing }</div> 
         </div>
     )
 }

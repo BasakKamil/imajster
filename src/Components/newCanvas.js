@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import { TimelineLite, TweenLite, Power1 } from 'gsap';
-import ScrollMagic from "scrollmagic";
-
+import ScrollMagic from "scrollmagic/scrollmagic/uncompressed/ScrollMagic.js";
 
 
 
@@ -9,7 +8,7 @@ class newCanvas extends Component{
     constructor(){
         super();
         this.state = { name: 'iPhone' };
-        this.controller = new ScrollMagic.Controller(); 
+        this.controller = new ScrollMagic.Controller({addIndicators: true}); 
         this.tween2 = new TimelineLite({paused: false});
         this.flightPath2 = {
             curviness: 1.5,
@@ -39,11 +38,10 @@ componentDidMount(){
     
     this.scene = new ScrollMagic.Scene({
         triggerElement: "#new", 
-        duration: 3000
+        duration: 600
         // trigerHook: 1
     })
     .setTween(this.tween2)
-    .addIndicators() // add indicators (requires plugin)
     .setPin("#new")
     .addTo(this.controller);
         // Animacja w GSAP
@@ -58,11 +56,13 @@ componentDidMount(){
                         <nav className="nav-closed">
                         <h3>What we can Repair for you ?</h3>
                         <ul className="nav-links">
-                        <li className="nav-button btn-primary" onClick={this.handleClick}> <p>iPhone</p> <br/>
-                        </li>
-                        <li className="nav-button btn-danger">iMac</li>
-                        <li className="nav-button btn-info">MacBook</li>
-                        <li className="nav-button btn-success">PC<br/></li>
+                          <li className="nav-button btn-primary" onClick={this.handleClicktwo}> <p>iPhone</p> <br/>
+                           </li>
+                           <li className="nav-button btn-danger"><p>iMac</p>
+                       
+                            </li>
+                            <li className="nav-button btn-info"><p>MacBook</p></li>
+                            <li className="nav-button btn-success"><p>PC</p><br/></li>
                         </ul>
                         </nav>   
                         <nav className="nav-open">

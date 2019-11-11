@@ -6,13 +6,15 @@ import Menu from './Menu';
 
 class Header extends Component {
  
-    
-   state = {
+    constructor(){
+      super();
+      this.state = {
       title: 'iMajster',
       showHeaderBottom: false
     }
+  }
     toggle = e => this.setState({showHeaderBottom: !this.state.showHeaderBottom});
-  
+
   
     render(){
       return(
@@ -21,7 +23,7 @@ class Header extends Component {
         <Spring 
         from={{opacity:0}}
         to={{opacity:1}}
-        config={{delay: 1000, duration: 1000}}
+        config={{delay: 200, duration: 1000}}
         >
           {props=>(
             <div className="KamilHeader container-fluid" style={props}>
