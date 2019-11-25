@@ -12,7 +12,8 @@ constructor(){
         // Express Login- backend
         apiResponse : "",
         loggedIn : false ,
-        products: []
+        products: [],
+        editMode : false
      
     };
 
@@ -50,6 +51,11 @@ removeFromInventory = (title) => {
   
   }
 
+  editProduct = () =>{
+this.setState({editMode: true});
+
+  }
+
 render(){
     // const { background = 'yellow' } = this.props;
 
@@ -74,10 +80,11 @@ return(
         <div>
         <AddBookForm 
         changeLoggedIn = {this.changeLoggedIn}
+        editMode = {this.editMode}
         />
             <div class="Stm">
                 <h2>Stan magazynowy:</h2>
-                <ShowProducts products={this.state.products} removeFromInventory = {this.removeFromInventory} />
+                <ShowProducts products={this.state.products} removeFromInventory = {this.removeFromInventory} editMode={this.state.editMode}/>
                 {/* {productShow} */}
             </div>
         </div>

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 // import { Spring } from 'react-spring/renderprops';
 // import {Transition, animated} from 'react-spring/renderprops';
+import Order from '../order';
+
 
 export class Basket extends Component {
     constructor(){
         super();
         this.state = {
-        showBasketFull: false
+        order: []
       }
     }
     
@@ -17,8 +19,9 @@ export class Basket extends Component {
         return ( 
             
             <div className="open" >
-               Mój Koszyczek
-
+         
+                    Ok
+                    <Order order={this.state.order} removeFromOrder={this.removeFromOrder} />
             </div>
         )
 }

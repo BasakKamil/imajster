@@ -5,6 +5,7 @@ export class AdminProductView extends Component {
         return (
             <div className="AdminPV row">
                 <div className="col-xs-4"><b>{this.props.product.name}</b></div>
+                <div className="col-xs-4"><button onClick={(event)=> this.props.editProduct} className="btn-primary NoweKam">Edit</button></div>
                 <div className="col-xs-4"><button onClick={(event)=>{this.props.removeFromInventory(this.props.product.name)}} className="btn-primary NoweKam">Remove</button></div>
             </div>
         )

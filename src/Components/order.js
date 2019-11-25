@@ -13,7 +13,6 @@ render(){
 
     return(
         <div className="Order">
-            <h1>Zamowienie</h1>
             {orderedProducts}
         </div>
     )

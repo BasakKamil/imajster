@@ -100,7 +100,7 @@ export class AddBookForm extends Component {
     }
 
     render() {
-
+        const label = this.props.editMode?"Edit":"Add";
         
 
         return (
@@ -137,7 +137,7 @@ export class AddBookForm extends Component {
             <div className="form-group">
                 <input type="text" placeholder="price" id="price" name="price" onChange={this.handleCHange}  className="form-control" value={this.state.product.price} />
             </div>
-            <button type="submit" className="btn btn-danger">Add</button>
+                <button type="submit" className="btn btn-danger">{label}</button>
             </form>
             </div>
         )

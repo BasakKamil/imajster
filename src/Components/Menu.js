@@ -28,16 +28,14 @@ constructor(){
 render(){
   
     return(
-      
                 <div id="menuCont">
-                     <nav className="KamilaMenu">
-                         <li> <Link data-router-view="home" to="/"><HomeB/></Link></li>
-                         <li> <Link data-router-view="shop" to="/shop"><ShopB/></Link></li>
-                         <li><Link to="/services"><ServiceB/></Link></li>
-                         <li> <Link to="/contact"><ContactB/></Link></li>
-                     </nav>
-                
-                 </div>  
+                    <nav className="KamilaMenu">
+                            <li> <Link data-router-view="home" to="/"><HomeB/></Link></li>
+                            <li> <Link data-router-view="shop" to="/shop"><ShopB/></Link></li>
+                            <li><Link to="/services"><ServiceB/></Link></li>
+                            <li> <Link to="/contact"><ContactB/></Link></li>
+                    </nav>
+                </div>  
     
         );
     }

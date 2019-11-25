@@ -9,6 +9,7 @@ import Cv from './CV';
 import AdminPanel from './AdminPanel';
 import ProductView from './ProductView';
 import UserForm from './User/UserForm';
+import Basket from './Button/Basket';
 
 export default class Router extends Component {
 
@@ -25,6 +26,7 @@ export default class Router extends Component {
                     <Route exact path='/cv' component={Cv}/>
                     <Route exact path='/admin' component={AdminPanel}/>
                     <Route exact path='/ProductView' component={ProductView}/>
+                    <Route exact path='/Basket' component={Basket}/>
                     <Route component={PageNotFound}/>
                 </Switch>
             </BrowserRouter>
