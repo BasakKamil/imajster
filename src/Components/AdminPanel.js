@@ -84,7 +84,7 @@ return(
         />
             <div class="Stm">
                 <h2>Stan magazynowy:</h2>
-                <ShowProducts products={this.state.products} removeFromInventory = {this.removeFromInventory} editMode={this.state.editMode}/>
+                <ShowProducts products={this.state.products} removeFromInventory = {this.removeFromInventory} editProduct={this.editProduct}/>
                 {/* {productShow} */}
             </div>
         </div>
