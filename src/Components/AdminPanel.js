@@ -4,6 +4,7 @@ import LoginPanel from './LoginPanel.js';
 import AddBookForm from './AddBookForm.js';
 import ShowProducts from './ShowProducts.js';
 import fbase from '../base';
+import { Link }  from 'react-router-dom';
 
 class AdminPanel extends Component{
 constructor(){
@@ -14,7 +15,7 @@ constructor(){
         loggedIn : false ,
         products: [],
         editMode : false,
-        
+
      
     };
 
@@ -57,6 +58,7 @@ editProduct = () =>{
 
   }
 
+
 render(){
     // const { background = 'yellow' } = this.props;
 
@@ -68,6 +70,7 @@ render(){
 
 return(
 <div className="Logowanie">
+    <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="home" to="/">Powrót</Link></button></div>
     <div className="NewLogin">
         <UserForm/>
     </div>

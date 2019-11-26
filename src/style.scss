@@ -168,10 +168,11 @@ padding-top: 3%;
     float: left;
     height: auto;
     margin-top: 4%;
-    div {
-      width: 100%;
+    .Half{
+     
+      width: 50%;
       float: left;
-      display: flex;
+     
   }
 }
 .InvContainer{
@@ -324,7 +325,11 @@ margin-top: 10% !important;
     }
 
 }
-
+.NowyL{
+  a{
+color: white;
+  }
+}
 
 .KamilHeader{
   padding: 1%;
@@ -418,7 +423,12 @@ margin-top: 3%;
 
   .st1{fill:rgb(49, 120, 228);}
 
-
+.ReturnHome{
+  display: block;
+    width: 100%;
+    padding: 1%;
+    margin: 1%;
+}
   .KamilaTlo{
     background: yellow;
     z-index: 1;
