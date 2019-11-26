@@ -13,7 +13,8 @@ constructor(){
         apiResponse : "",
         loggedIn : false ,
         products: [],
-        editMode : false
+        editMode : false,
+        
      
     };
 
@@ -51,8 +52,8 @@ removeFromInventory = (title) => {
   
   }
 
-  editProduct = () =>{
-this.setState({editMode: true});
+editProduct = () =>{
+   this.setState({editMode: true});
 
   }
 
