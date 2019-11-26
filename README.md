@@ -1,6 +1,6 @@
-www.imajster.com
+www.imajster.pl
 
-It will be my new Web App :)
+Is's my new Web App :)
 
 You must chcek it here... :
 
