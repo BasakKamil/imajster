@@ -71,6 +71,7 @@ render(){
 return(
 <div className="Logowanie">
     <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="home" to="/">Powrót</Link></button></div>
+    <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="cv" to="/cv">CV</Link></button></div>
     <div className="NewLogin">
         <UserForm/>
     </div>
