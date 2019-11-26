@@ -80,7 +80,7 @@ return(
         <div>
         <AddBookForm 
         changeLoggedIn = {this.changeLoggedIn}
-        editMode = {this.editMode}
+        editMode = {this.state.editMode}
         />
             <div class="Stm">
                 <h2>Stan magazynowy:</h2>
