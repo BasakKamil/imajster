@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import anime from 'animejs';
 import Focisz from '../Components/BOX/amman.jpg';
+import Footer from './footer';
 
 export class CvFull extends Component {
    
@@ -43,7 +44,7 @@ animecss = (d,f,g) => {
     targets: `${d}`,
     left: '240px',
     backgroundColor: `${g}`,
-    borderRadius: ['0%', '50%'],
+    borderRadius: ['5px', '30px'],
     easing: 'easeInOutQuad',
     delay: `${f}`,
     duration: 1000,
@@ -94,9 +95,40 @@ animebox = (h) =>{
                 </table>
             </div>
             <div className="ImageKamB">
-                <img src={Focisz}></img>
+                <img src={Focisz} alt="Kamil"></img>
             </div>
-            <div className="School"> <h2>Wykształcenie:</h2></div>
+            <div className="School"> <h2>Wykształcenie:</h2>
+            <table className="Education">
+                <tr>
+                    <td>2007-2010</td> <td className="pok"> LO im.Józefa Wybickiego </td> 
+                </tr>
+                <tr>
+                    <td>2011: </td><td className="pok"> Pracowałem(Rok przerwy od nauki)</td> 
+                </tr>
+
+            </table>
+            </div>
+            <div className="Experince"> <h2>Doświadczenie:</h2>
+            <table className="Worked">
+                <tr>
+                    <td>2011</td> <td className="pok"> Pracowałem w sklepie internetowych Fresh24 jako magazynier</td> 
+                </tr>
+                <tr>
+                    <td>2012 </td><td className="pok"> Pracowałem(Rok przerwy od nauki)</td> 
+                </tr>
+
+            </table> 
+            </div>
+            <div className="AboutMeWork">
+            <h2>O Mnie:</h2>
+                <p>
+            Na codzien zajmuje się Front-End,po ukończeiu Studiów ukończyłem kurs z Node.js, zachaczając o React i w tej bibliotece cały czas rozwijam umiejętności.
+            Miałem okazje robić na praktykach (póżniejszej pracy) strony w CMS-Joomla chodźby dla Bydgoskiej Izby Lekarskiej,linki do stron dla znajomych znajdują poniżej, które także wykonałem.
+            Sam posiadam swoją Aplikacje Webową tak jak widać (Cały czas ją udoskonalam), pisze w React, znam SASS, podstawy Express, jQery (znam ale wiem, że odchodzi się generalnie od jej używania), lubie robić animacje w Anime.js oraz GSAP.
+            Gneralnie Java Script podstawy znam, dużo rzeczy sprawdzam w sieci (nie wszystko pamietam zawsze z pamięci) ale generlanie proste skrypty potrafiłem napisac skacząc po elementach DOM np do Sklepu VirtueMart( darmowy sklep do CMS ) które obeszły problem automatycznie renderowanych-pomniejszanych zdjęc, nowe zasady z destrukturacji zanm ale jak juz pisałem sporo rzeczy sprawdzam w sieci.
+                </p>
+            </div>
+            <Footer/>
             </div>
         )
     }
