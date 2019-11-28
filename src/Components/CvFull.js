@@ -44,7 +44,7 @@ animecss = (d,f,g) => {
     targets: `${d}`,
     left: '240px',
     backgroundColor: `${g}`,
-    borderRadius: ['5px', '30px'],
+    borderRadius: ['5px','10%','50%','30%','30px'],
     easing: 'easeInOutQuad',
     delay: `${f}`,
     duration: 1000,
@@ -63,8 +63,8 @@ animebox = (h) =>{
   componentDidMount(){
     this.animetwo('.WitamywCv');
     this.animenext('.Start',500); 
-    this.animecss('.pok',1000,'#cce4ff');
-    this.animecss('.Start h2',3000,'#95a1ad');
+    this.animecss('.pok',1000,'#5d7086');
+    this.animecss('.Start h2',3000,'#5d7086');
 }
    
     render() {
