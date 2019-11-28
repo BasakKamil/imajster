@@ -136,8 +136,10 @@ h2{
   display: flex;
 
 }
+.Zmianyyy{
+  position: relative !important;
+}
 #HomeCanvas{
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
     svg{
 
       mask{
@@ -342,20 +344,36 @@ margin-top: 10% !important;
 color: white;
   }
 }
+.kamciaNews{
+  opacity: 1;
+  width: 50%;
+  float: left;
+  height: auto;
+  display: block;
+}
 
+.Ahh{
+  position: absolute;
+  top: 14%;
+}
+.KamciaButton{
+  position: absolute;
+}
 .KamilHeader{
-  padding: 1%;
-  z-index: 99999999999999999;
+  padding: 0;
   display: block;
   min-height: 80px;
   z-index: 99999999999;
+  margin: 0 auto;
+  padding-right: 0 !important;
   position: absolute;
-  width: 100%;
+  width: 100% !important;
   background: none;
 
   .Uno{
   margin-left: 0;
   margin-right: 0;
+  min-height: 100px;
       button:nth-child(1){
         right: 10%;
         position: absolute; 
@@ -636,6 +654,7 @@ body {
   .KamciaButton{
     margin-left: 1%;
     margin-right: 1%;
+      margin-top: 2%;
     svg{
       z-index: 999999999999999999999999999999;
     

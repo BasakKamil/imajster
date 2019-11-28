@@ -96,6 +96,7 @@ animebox = (h) =>{
             <div className="ImageKamB">
                 <img src={Focisz}></img>
             </div>
+            <div className="School"> <h2>Wykształcenie:</h2></div>
             </div>
         )
     }

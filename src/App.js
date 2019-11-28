@@ -20,9 +20,9 @@ import anime from 'animejs';
 
 
 
-
 class App extends React.Component {
-  
+
+
   constructor(props) {
     super(props);
     this.animate = this.animate.bind(this);
@@ -34,7 +34,7 @@ class App extends React.Component {
                   scale: { x: 3, y: 3, z: 3 },
                   products: [],
                   order: [], 
-                  showMenuButton: false
+                  shownewmenu: false
                 }
                 
                   
@@ -273,20 +273,20 @@ class App extends React.Component {
     this.cube.rotation.y += 0.005;
   }
 
-toggle = e => this.setState({
-  showMenuButton: this.state.showMenuButton
-});
 
-
+  tog = (e) => this.setState({shownewmenu: !this.state.shownewmenu});
   render() {
 
     return (
             <div>
               <Header/>
-                <div className="BoodyBox"  ref={mount => this.mount = mount}> </div>
-                <div className="BodyBox2"> <NewCanvas/> </div>
-              <Footer/>
-              <HomeFooter/>
+              <div className="NewBody">
+                    <div className="BoodyBox"  ref={mount => this.mount = mount}> </div>
+                    <div className="BodyBox2"> <NewCanvas/> </div>
+                    <Footer/>
+                    <HomeFooter/>
+              </div>
+         
             </div>
             )
     
