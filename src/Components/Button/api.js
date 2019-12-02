@@ -64,10 +64,10 @@ class Api extends Component{
                     <div contacts={this.state.contacts}></div>
                           <p className= "col6  col-md-4 Tempka"></p>
                     <div> 
-                         <p className="col6 col-md-4"> Obecny stan Dolara to: </p>
-                         <p className="col6  col-md-4 Dolce">     </p>
-                         <p className="col6  col-md-4">  Obecny stan Franka to: </p>
-                         <p className="col6  col-md-4 Frank">     </p>
+                         <p className="col6 "> Obecny stan Dolara to: </p>
+                         <p className="col6  Dolce">     </p>
+                         <p className="col6  ">  Obecny stan Franka to: </p>
+                         <p className="col6   Frank">     </p>
                     </div>
                     
                 </div>
