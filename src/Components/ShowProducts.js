@@ -5,7 +5,15 @@ export class ShowProducts extends Component {
     render() {
         let list;
         if(this.props.products){
-            list = this.props.products.map((product) => <AdminProductView product={product} removeFromInventory={this.props.removeFromInventory} editProduct={this.props.editProduct}/>);
+            list = this.props.products.map((product) =>
+             
+            <AdminProductView 
+            key={product.name}
+            product={product} 
+            removeFromInventory={this.props.removeFromInventory} 
+            editProduct={this.props.editProduct}
+            />);
+            
         }
         else{
             list = <div>Nie ma nic!</div>

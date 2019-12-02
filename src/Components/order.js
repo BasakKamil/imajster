@@ -12,12 +12,12 @@ render(){
         return <OrderView product={order}  removeFromOrder={this.props.removeFromOrder} />
     })
     
- 
-
+   
     return(
         <div className="Order">
            <div className="Half">{orderedProducts}</div> 
            <div className="Half">  <p>SUMA:</p> 
+       
          
            </div> 
         </div>

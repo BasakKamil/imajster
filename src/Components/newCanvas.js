@@ -9,7 +9,7 @@ class newCanvas extends Component{
         super();
         this.state = { name: 'iPhone' };
         this.controller = new ScrollMagic.Controller({addIndicators: true}); 
-        this.tween2 = new TimelineLite({paused: false});
+        this.tween = new TimelineLite();
         this.flightPath2 = {
             curviness: 1.5,
             autoRotate: false,
@@ -27,7 +27,7 @@ class newCanvas extends Component{
         }   
     }
 componentDidMount(){
-    this.tween2.add(
+    this.tween.add(
         TweenLite.to('.iPhoneFly',3,{
             bezier: this.flightPath2,
             ease: Power1.easeInOut 
@@ -35,13 +35,13 @@ componentDidMount(){
         })
     );
     
-    
     this.scene = new ScrollMagic.Scene({
         triggerElement: "#new", 
-        duration: 600
-        // trigerHook: 1
+        duration: 400,
+        triggerHook: 0.2
     })
-    .setTween(this.tween2)
+    .setTween(this.tween)
+    .addIndicators()
     .setPin("#new")
     .addTo(this.controller);
         // Animacja w GSAP

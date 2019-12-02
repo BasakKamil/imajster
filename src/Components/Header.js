@@ -48,7 +48,7 @@ class Header extends Component {
         <Spring 
         from={{opacity:0}}
         to={{opacity:1}}
-        config={{delay: 200, duration: 1000}}
+
         >
           {props=>(
             <div className="KamilHeader container-fluid" style={props}>
@@ -64,14 +64,14 @@ class Header extends Component {
                            </g>
                          </svg>
                         </button>
-                <HeaderBottom toggle={this.toggle}/>
+                <HeaderBottom />
                 <Transition
                 native
                 items={this.state.showHeaderBottom}
                 from={{opacity: 0,transform: 'scale(0)'}}
                 enter={{opacity: 1,transform: 'scale(1)'}}
-                leave={{opacity: 0.1}}
-                cofing={{ duration: 1000}}>
+                leave={{opacity: 0}}
+                cofing={{ duration: 0}} >
                 {show => show && (props =>(
                 <animated.div style={props} className="kamcia">
                 <Menu />
