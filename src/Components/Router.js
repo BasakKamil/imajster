@@ -10,12 +10,15 @@ import AdminPanel from './AdminPanel';
 import ProductView from './ProductView';
 import UserForm from './User/UserForm';
 import Basket from './Button/Basket';
+import {Provider} from 'react-redux';
+import store from '../store/store';
 
 export default class Router extends Component {
 
     render(){
 
         return(
+        <Provider store={store}>
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' component={App}/>
@@ -30,6 +33,7 @@ export default class Router extends Component {
                     <Route component={PageNotFound}/>
                 </Switch>
             </BrowserRouter>
+            </Provider>
         );
     }
 }

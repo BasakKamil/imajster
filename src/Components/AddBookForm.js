@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import fbase from '../base.js';
 import firebaseApp from '../fbase.js';
-export class AddBookForm extends Component {
+import {connect} from 'react-redux';
+
+export class AddProduct extends Component {
 
     // eslint-disable-next-line no-useless-constructor
     constructor(){
@@ -109,23 +111,23 @@ export class AddBookForm extends Component {
             <form onSubmit={this.addNewProduct}>
                 <h1>Dodaj Produkt do Bazy Danych</h1>
             <div className="form-group">
-                <input type="text" placeholder="name" id="name" name="name"  onChange={this.handleCHange} className="form-control" value={this.state.product.name}/>
+                <input type="text" placeholder="name" id="name" name="name"  onChange={this.handleCHange} className="form-control" value={this.props.product.name}/>
             </div>
             <div className="form-group">
-                <input type="text" placeholder="category" id="category" name="category" onChange={this.handleCHange} className="form-control" value={this.state.product.category}/>
+                <input type="text" placeholder="category" id="category" name="category" onChange={this.handleCHange} className="form-control" value={this.props.product.category}/>
             </div>
             <div className="form-group">
-                <textarea placeholder="description" id="description" name="description" onChange={this.handleCHange} className="form-control" value={this.state.product.description}/>
+                <textarea placeholder="description" id="description" name="description" onChange={this.handleCHange} className="form-control" value={this.props.product.description}/>
             </div>
             <div className="form-group">
-                <input type="checkbox" placeholder="OnStock" id="OnStock" name="OnStock" onChange={this.handleCHange} className="form-chceck-input" value={this.state.product.OnStock} />
+                <input type="checkbox" placeholder="OnStock" id="OnStock" name="OnStock" onChange={this.handleCHange} className="form-chceck-input" value={this.props.product.OnStock} />
                 <label htmlFor="ProductOnStock" className="form-check-label">On Stock</label>
             </div>
             <div className="form-group">
-                <input type="text" placeholder="image" id="image" name="image" onChange={this.handleCHange}  className="form-control" value={this.state.product.image} />
+                <input type="text" placeholder="image" id="image" name="image" onChange={this.handleCHange}  className="form-control" value={this.props.product.image} />
             </div>
             <div className="form-group">
-                <select type="select" placeholder="type" id="type" name="type" onChange={this.handleCHange}  className="form-control" value={this.state.product.type} >
+                <select type="select" placeholder="type" id="type" name="type" onChange={this.handleCHange}  className="form-control" value={this.props.product.type} >
                     <option value="iphone5">iPhone 5</option>
                     <option value="iphone6">iPhone 6</option>
                     <option value="iphone7">iPhone 7</option>
@@ -135,13 +137,21 @@ export class AddBookForm extends Component {
                 </select>
             </div>
             <div className="form-group">
-                <input type="text" placeholder="price" id="price" name="price" onChange={this.handleCHange}  className="form-control" value={this.state.product.price} />
+                <input type="text" placeholder="price" id="price" name="price" onChange={this.handleCHange}  className="form-control" value={this.props.product.price} />
             </div>
                 <button type="submit" className="btn btn-danger">{label}</button>
             </form>
             </div>
         )
     }
-}
 
-export default AddBookForm
+}
+const mapStateToProps = state => {
+    return {
+        product: state.product
+    }
+
+}
+const AddBookForm = connect(mapStateToProps)(AddProduct)
+
+export default AddBookForm;

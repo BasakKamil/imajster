@@ -4,6 +4,8 @@ import ScrollMagic from "scrollmagic/scrollmagic/uncompressed/ScrollMagic.js";
 
 
 
+
+
 class newCanvas extends Component{
     constructor(){
         super();

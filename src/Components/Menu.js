@@ -4,8 +4,8 @@ import ShopB from './Button/ShopB';
 import HomeB from './Button/HomeButton';
 import ContactB from './Button/ContactButton';
 import ServiceB from './Button/ServicesButton';
+// import Fade from './Fade';
 // import Highway from '@dogstudio/highway';
-// import Fade from './highway';
 
 
 class Menu extends Component{
@@ -17,8 +17,6 @@ constructor(){
     }
     // this.H = new Highway.Core({
     //     home: Fade
-
-
     // });
 
 }
@@ -26,6 +24,13 @@ constructor(){
 
 
 render(){
+    
+// const H = new Highway.Core({
+//     transitions:{
+//       default: Fade
+//     }
+//    });
+//    console.dir(H);
   
     return(
                 <div id="menuCont">
