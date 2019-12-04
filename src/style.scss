@@ -152,7 +152,7 @@ h2{
 
 }
 .Zmianyyy{
-  position: relative !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
 }
 #HomeCanvas{
     svg{
@@ -381,7 +381,7 @@ color: white;
   z-index: 99999999999;
   margin: 0 auto;
   padding-right: 0 !important;
-  position: absolute;
+  position: fixed;
   width: 100% !important;
   background: none;
 
