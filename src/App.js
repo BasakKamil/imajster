@@ -84,7 +84,7 @@ class App extends React.Component {
     this.mount.appendChild(this.renderer.domElement);
 
     //ADD CAMERA
-    this.camera = new THREE.PerspectiveCamera( 90, this.width / this.height, 0.1, 1500 );
+    this.camera = new THREE.PerspectiveCamera( 100, this.width / this.height, 0.3, 3000 );
     
   
 
@@ -103,7 +103,7 @@ class App extends React.Component {
   
 
         // Tu zaczyna sie pudło 
-        this.geometry = new THREE.BoxGeometry( 800, 800, 800 );
+        this.geometry = new THREE.BoxGeometry( 2000, 2000, 2000 );
       // this.material = [
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
       //   new THREE.MeshBasicMaterial({color: 0xffffff, map:new THREE.MeshLambertMaterial({map:this.VideoTexture,side:THREE.DoubleSide})}),
@@ -123,7 +123,7 @@ class App extends React.Component {
       ];
    
       this.cube = new THREE.Mesh( this.geometry, this.material );
-      this.cube.position.z = -120;
+      this.cube.position.z = 0;
       this.scene.add( this.cube );
       this.animate();
 
@@ -183,7 +183,7 @@ class App extends React.Component {
 
     // ORBIT CONTROL
     this.orbit = new OrbitControls( this.camera, this.renderer.domElement );
-    this.camera.position.set( 220, 22, 2 );
+    this.camera.position.set( 500, 22, 2 );
     this.orbit.update();
 
 
@@ -206,7 +206,7 @@ class App extends React.Component {
 			this.scene.add( this.control );
 
       //
-      gltf.scene.scale.set(3, 3, 3)
+      gltf.scene.scale.set(2, 2, 2);
       this.orbit.update();
 
       this.renderer.render(this.scene, this.camera);
@@ -270,7 +270,7 @@ class App extends React.Component {
     this.frameId = window.requestAnimationFrame(this.animate);
     this.renderer.render(this.scene, this.camera);
 
-    this.cube.rotation.y += 0.005;
+    this.cube.rotation.y += 0.003;
   }
 
 

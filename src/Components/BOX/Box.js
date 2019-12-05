@@ -28,10 +28,10 @@ class Box extends Component{
         this.renderer.setSize(width, height);
         this.renderer.setPixelRatio(window.devicePixelRatio);
         
-        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         
         this.mount.appendChild(this.renderer.domElement);
-        this.initializeOrbits();
+        // this.initializeOrbits();
         this.initializeCamera();
  
         const lights = [];
@@ -71,11 +71,11 @@ this.animate();
         cancelAnimationFrame(this.frameId);
         this.mount.removeChild(this.renderer.domElement);
       }
-    initializeOrbits() {
-        this.controls.rotateSpeed = 1.0;
-        this.controls.zoomSpeed = 1.2;
-        this.controls.panSpeed = 0.8;
-      }
+    // initializeOrbits() {
+    //     this.controls.rotateSpeed = 1.0;
+    //     this.controls.zoomSpeed = 1.2;
+    //     this.controls.panSpeed = 0.8;
+    //   }
     initializeCamera() {
         this.camera.position.x = 0;
         this.camera.position.y = 0;
@@ -85,7 +85,7 @@ this.animate();
         this.frameId = window.requestAnimationFrame(this.animate);
         this.renderer.render(this.scene, this.camera);
 
-        this.cube.rotation.y += 0.05;
+        this.cube.rotation.y += 0.01;
        
       }
     addCube(cube) {
@@ -97,7 +97,7 @@ this.animate();
   
     render() {
         return (
-          <a href="http://prevohouse.com/" className="col-3">
+          <a href="http://prevohouse.com/" className="col-3" target="_blank">
             <div
               id="Box"
               className="KamilaStopka"
