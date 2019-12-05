@@ -183,7 +183,7 @@ class App extends React.Component {
 
     // ORBIT CONTROL
     this.orbit = new OrbitControls( this.camera, this.renderer.domElement );
-    this.camera.position.set( 500, 22, 2 );
+    this.camera.position.set( 500, 52, 2 );
     this.orbit.update();
 
 

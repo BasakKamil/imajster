@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import Foto1 from './amman.jpg';
 
 
@@ -98,7 +97,7 @@ this.animate();
   
     render() {
         return (
-          <a href="http://ammankebab.pl/" className="col-3" target="_blank">
+          <a href="http://ammankebab.pl/" className="col-3"  rel="noopener noreferrer" >
             <div
               id="Box2"
               className="KamilaStopka"
