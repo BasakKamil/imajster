@@ -264,7 +264,7 @@ ul{
 }
 .newCanvas{
     padding: 2%;
-    width: 100%;
+    width: 100% !important;
       position: relative;
       display: inline-block;
   
@@ -865,4 +865,17 @@ h1{display: none;}
     padding: 2px;
     border-radius: 5px;
     margin-left: 10%;
+}
+
+@media (max-width: 1024px){
+  .KamilaMenu{
+    li{width: 100%;}
+  }
+  .FootBasi{
+    a{width: 25%;}
+  }
+
+  .KamciaButton{
+    width: 30%;
+  }
 }
