@@ -140,7 +140,7 @@ h2{
   display: flex;
   padding: 1%;
   background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
-  .d{  width: 20%;}
+  .d{  width: 25%;}
   div{
 
     p{width: 100%;}
@@ -870,6 +870,16 @@ h1{display: none;}
 @media (max-width: 1024px){
   .KamilaMenu{
     li{width: 100%;}
+  }
+  .AdminMajster{
+    .KamilaForm{
+      width: 80%;
+      margin-left: 10%;
+    }
+  }
+  .clock {
+    width: 100px;
+    height: 100px;
   }
   .FootBasi{
     a{width: 25%;}
