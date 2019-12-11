@@ -1,11 +1,20 @@
 import React,{Component} from 'react';
 import Temp from '../BOX/temp.png';
+import Skycons from 'react-skycons';
 
 class Api extends Component{
 
-    state  = {
-        contacts: []
+
+  constructor(){
+    super();
+    this.state  = {
+      contacts: [],
+      icon:"",
+      skycons: new Skycons({color: "white"})
     };
+  
+
+  }
     componentDidMount(){
 
  
@@ -23,17 +32,21 @@ class Api extends Component{
                 .then(response => response.json())
                 //  .then(data => console.log(data))
                  .then(data=>{
-                  console.log(data);
+                  
                   this.place = data.timezone;
                   this.temperature = data.currently.temperature;
-                  console.log(this.place);
                   this.new = ((this.temperature - 32) * 5/9);
                   // Zaokragle sobie temp do całości
                   this.real = Math.round(this.new);
                   const warsow = `<p> Obecnie w ${this.place} mamy:</p><h1> ${this.real}<img className="imgC" style="width:30px; margin-left:20px" src=${Temp} /></h1>`;
                   document.querySelector('.Tempka').innerHTML = warsow;
-        
-    
+                  this.icon = data.currently.icon;
+                  this.currentIcon =  this.icon.replace(/-/g,"_").toUpperCase();
+                  // ustawiam na stanie icone odpowiednia do pogody obecnej w Wawie 
+                  this.setState({
+                    icon: this.currentIcon
+                  })
+                  console.log(this.currentIcon);
                  });
         
                 fetch(Euro)
@@ -52,8 +65,10 @@ class Api extends Component{
                 const course =  arr.rates[0].bid;
                 document.querySelector('.Dolce').innerHTML = course; 
                 });
-               
 
+
+
+                // Połaczenie sie zmoim sererem backendowym 
                 function getRepos(){
                   return fetch(kamilaserver)
                   .then((response)=>{
@@ -67,17 +82,10 @@ class Api extends Component{
                 }
                 
                 getRepos().then(arr=>console.dir("Nic nie znalazło!"));
-               
-               
-             
-            
-       
-        
         
     
     }
-
-
+   
     render(){
 
         return(
@@ -92,7 +100,12 @@ class Api extends Component{
                     <div> 
                    
                         <p className="Tempka"></p>
-                       
+                        <Skycons 
+                          color='white' 
+                          icon={this.state.icon} 
+                          autoplay={false}
+                          className="Emota"
+                        /> 
 
 
                     </div>
