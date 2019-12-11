@@ -58,13 +58,13 @@ componentDidMount(){
                         <nav className="nav-closed">
                         <h3>What we can Repair for you ?</h3>
                         <ul className="nav-links">
-                          <li className="nav-button btn-primary" onClick={this.handleClicktwo}> <p>iPhone</p> <br/>
+                          <li className="nav-button btn-primary" onClick={this.handleClicktwo}> <p>PC</p> <br/>
                            </li>
                            <li className="nav-button btn-danger"><p>iMac</p>
                        
                             </li>
                             <li className="nav-button btn-info"><p>MacBook</p></li>
-                            <li className="nav-button btn-success"><p>PC</p><br/></li>
+                            <li className="nav-button btn-success"><p>iPhone</p><br/></li>
                         </ul>
                         </nav>   
                         <nav className="nav-open">
