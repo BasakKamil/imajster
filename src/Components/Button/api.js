@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import Temp from '../BOX/temp.png';
 
 class Api extends Component{
 
@@ -9,12 +9,12 @@ class Api extends Component{
     componentDidMount(){
 
  
-          
-           
+              
+              const lat = 52.185970;
+              const long = 21.184840;
              
               const proxy = 'http://cors-anywhere.herokuapp.com/';
-              const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/37.8267,-122.4233`;
-              // const frank = `${proxy}http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json`;
+              const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/${lat},${long}`;
               const dol = `${proxy}http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json`;
               const kamilaserver = `${proxy}https://nodeback-js.herokuapp.com/`;
               const Euro = `${proxy}http://api.nbp.pl/api/exchangerates/rates/c/eur?format=json`;
@@ -23,9 +23,15 @@ class Api extends Component{
                 .then(response => response.json())
                 //  .then(data => console.log(data))
                  .then(data=>{
-      
+                  console.log(data);
+                  this.place = data.timezone;
                   this.temperature = data.currently.temperature;
-                  console.log(this.temperature);
+                  console.log(this.place);
+                  this.new = ((this.temperature - 32) * 5/9);
+                  // Zaokragle sobie temp do całości
+                  this.real = Math.round(this.new);
+                  const warsow = `<p> Obecnie w ${this.place} mamy:</p><h1> ${this.real}<img className="imgC" style="width:30px; margin-left:20px" src=${Temp} /></h1>`;
+                  document.querySelector('.Tempka').innerHTML = warsow;
         
     
                  });
@@ -34,7 +40,7 @@ class Api extends Component{
                 .then(res=> res.json())
                 .then(
                  arr=> {
-                   console.dir(arr);
+                  //  console.dir(arr);
                  const kurs = arr.rates[0].ask;
                  document.querySelector('.Frank').innerHTML = kurs; 
                 });
@@ -78,12 +84,18 @@ class Api extends Component{
                 <div>
                    
                     <div className="Current"> 
-                         <p className="d-inline p-2 "> Obecny stan Dolara to: </p>
-                         <p className="d-inline p-2 Dolce">     </p>
-                         <p className="d-inline p-2  ">  Obecny stan Euro to: </p>
-                         <p className="d-inline p-2  Frank">     </p>
+                          <p className="d-inline p-2 "> Obecny stan Dolara to: </p>
+                          <p className="d-inline p-2 Dolce">     </p>
+                          <p className="d-inline p-2  ">  Obecny stan Euro to: </p>
+                          <p className="d-inline p-2  Frank">     </p>
                     </div>
-                    
+                    <div> 
+                   
+                        <p className="Tempka"></p>
+                       
+
+
+                    </div>
                 </div>
               )
             }
