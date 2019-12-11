@@ -11,7 +11,6 @@ export class ShowProducts extends Component {
             key={product.name}
             product={product} 
             removeFromInventory={this.props.removeFromInventory} 
-            editProduct={this.props.editProduct}
             />);
             
         }

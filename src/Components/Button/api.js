@@ -17,7 +17,7 @@ class Api extends Component{
               const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/37.8267,-122.4233`;
               const frank = `${proxy}http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json`;
               const dol = `${proxy}http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json`;
-   
+              const kamilaserver = `${proxy}https://nodeback-js.herokuapp.com/`;
  
                 fetch(api)
                 .then(response => response.json())
@@ -46,7 +46,9 @@ class Api extends Component{
                 document.querySelector('.Dolce').innerHTML = course; 
                 });
                 
-            
+                fetch(kamilaserver)
+                .then(res=>console.log(res)
+                );
                
              
             
