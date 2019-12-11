@@ -138,14 +138,14 @@ h2{
   border-radius: 10px;
   display: block;
   text-align: center;
-  min-height: 150px;
+  min-height: 200px;
   .Check{
     width: 50%;
     text-align: center;
     float: left;
     height: auto;
     display: block;
-    div{width:100%;}
+    div{width:100%;font-size: 20px;}
     }
 }
 
@@ -163,6 +163,7 @@ h2{
 .AllMap{
   background-color: yellow;
   width: 80%;
+  margin-bottom: 2%;
   margin-left: 10%;
   padding: 10px;
   margin-top: 2%;
