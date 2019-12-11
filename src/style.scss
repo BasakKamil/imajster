@@ -7,7 +7,11 @@ $whiteColor: #ffffff;
 $blackColor: black;
 $font-family: 'Quicksand', sans-serif;
 $font-family2: 'Monoton', cursive;
-
+.MapkaKamila{
+  display: block;
+  width: 100% !important;
+  height: auto;
+}
 .loading{
   position: absolute;
   display: block;
@@ -39,6 +43,17 @@ h2{
   right: 1px;
   top: 20%;
  }
+ #CallMeBaby{
+  padding-top: 6%;
+ }
+
+ .InSideService{
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  padding-top: 15%;
+  padding-bottom: 20%;
+}
 .MojaTab{
   tr{
     td{
@@ -66,6 +81,9 @@ h2{
   background-color: black;
   border-radius: 10px;
   color: white;
+}
+.Current{
+  display: flex;
 }
 .NewP{
   
@@ -96,16 +114,47 @@ h2{
   background: lightgoldenrodyellow;
   text-align: center;
 }
+.Paper {
+  background-color: yellow;
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
+  margin-top: 2%;
+  border-radius: 10px;
+  display: block;
+  text-align: center;
+  min-height: 150px;
+  .Check{
+    width: 50%;
+    text-align: center;
+    float: left;
+    height: auto;
+    display: block;
+    div{width:100%;}
+    }
+}
+
   .KamilBCall{
     display: block;
-    position: absolute;
-    margin-top: 10%;
-    left: 10%;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 10%;
     width: 80%;
     background: yellow;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
+}
+.AllMap{
+  background-color: yellow;
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
+  margin-top: 2%;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  min-height: 350px;
 }
 
 @keyframes line-anim{
@@ -880,6 +929,12 @@ h1{display: none;}
   .clock {
     width: 100px;
     height: 100px;
+  }
+  .Paper {
+    .Check{
+      width: 100%;
+    }
+
   }
   .FootBasi{
     a{width: 25%;}

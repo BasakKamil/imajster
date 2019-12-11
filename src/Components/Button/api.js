@@ -11,13 +11,13 @@ class Api extends Component{
  
           
            
-              // Check if the XMLHttpRequest object has a "withCredentials" property.
-              // "withCredentials" only exists on XMLHttpRequest2 objects.
+             
               const proxy = 'http://cors-anywhere.herokuapp.com/';
               const api = `${proxy}https://api.darksky.net/forecast/a18f321825c2c6503931cf827ff61142/37.8267,-122.4233`;
-              const frank = `${proxy}http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json`;
+              // const frank = `${proxy}http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json`;
               const dol = `${proxy}http://api.nbp.pl/api/exchangerates/rates/c/usd?format=json`;
               const kamilaserver = `${proxy}https://nodeback-js.herokuapp.com/`;
+              const Euro = `${proxy}http://api.nbp.pl/api/exchangerates/rates/c/eur?format=json`;
  
                 fetch(api)
                 .then(response => response.json())
@@ -30,11 +30,12 @@ class Api extends Component{
     
                  });
         
-                fetch(frank)
+                fetch(Euro)
                 .then(res=> res.json())
                 .then(
                  arr=> {
-                 const kurs = arr.rates[0].mid;
+                   console.dir(arr);
+                 const kurs = arr.rates[0].ask;
                  document.querySelector('.Frank').innerHTML = kurs; 
                 });
     
@@ -45,10 +46,22 @@ class Api extends Component{
                 const course =  arr.rates[0].bid;
                 document.querySelector('.Dolce').innerHTML = course; 
                 });
+               
+
+                function getRepos(){
+                  return fetch(kamilaserver)
+                  .then((response)=>{
+                      if(response.ok){
+                        return response.json();
+                      }
+                      throw Error('Response not 200');
+                  })
+                  .catch(err => console.warn(err));
                 
-                fetch(kamilaserver)
-                .then(res=>console.log(res)
-                );
+                }
+                
+                getRepos().then(arr=>console.dir("Nic nie znalazło!"));
+               
                
              
             
@@ -63,13 +76,12 @@ class Api extends Component{
 
         return(
                 <div>
-                    <div contacts={this.state.contacts}></div>
-                          <p className= "col6  col-md-4 Tempka"></p>
-                    <div> 
-                         <p className="col6 "> Obecny stan Dolara to: </p>
-                         <p className="col6  Dolce">     </p>
-                         <p className="col6  ">  Obecny stan Franka to: </p>
-                         <p className="col6   Frank">     </p>
+                   
+                    <div className="Current"> 
+                         <p className="d-inline p-2 "> Obecny stan Dolara to: </p>
+                         <p className="d-inline p-2 Dolce">     </p>
+                         <p className="d-inline p-2  ">  Obecny stan Euro to: </p>
+                         <p className="d-inline p-2  Frank">     </p>
                     </div>
                     
                 </div>

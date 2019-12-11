@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Header from './Header';
-import Footer from './footer';
+import HomeFooter from './HomeFooter';
 
 class Services extends Component{
 
@@ -9,7 +9,17 @@ class Services extends Component{
 
             <div className="ServicesiMajster">
                 <Header/>
-                <Footer/>
+
+                <div className="InSideService">
+                    <h1>Witaj w Usługach!</h1>
+
+                    <div> * Naprawy sprzetu Apple</div>
+                    <div> * Strony www w CMS</div>
+
+
+                </div>
+              
+                <HomeFooter/> 
             </div>
         );
     }

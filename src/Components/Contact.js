@@ -4,6 +4,8 @@ import Header from './Header';
 import { TimelineLite, TweenLite } from 'gsap';
 // import Foto from '../Components/BOX/slub.jpg';
 import Api from './Button/api';
+import Map from './Map';
+
 
 class Contact extends Component{
 
@@ -16,7 +18,7 @@ class Contact extends Component{
             values: [{x:100,y:-20},{x:300,y:10},{x:500,y:100}]
         };
         this.tween.add(
-                    TweenLite.to(".paper",1,{
+                    TweenLite.to(".Paper",1,{
                         bezier: this.flightPath,
                         // ease: Power1.easeInOut
                     })
@@ -67,16 +69,24 @@ class Contact extends Component{
                 
                 <div id="CallMeBaby">
                    <div className="KamilBCall">
-                    <h1 className={this.state.class}>Call me! {this.state.title}</h1>
                              
                     <Api/>
-                  
-              
-                    
-                 
-                   {/* <img style={Fociszka} src={Foto} /> */}
-           
                    </div>
+                   <div className="Paper">
+                    <div className="Check">
+                            <h2>Jak się ze mną Skontaktować ?</h2>
+                            <div>Tel. 796 895 079<br/>
+                            E-Mail: Bastric91@gmail.com<br/>
+                            </div>
+
+                    </div>
+                    <div><h2>Gdzie mnie Szukać ?</h2>
+                    Wraszawa - Wawer - Radość
+                    </div>
+                    </div>
+                    <div className="AllMap">
+                    <Map/>
+                    </div>
                 </div>
             </div>
     
