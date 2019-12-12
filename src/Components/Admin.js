@@ -27,15 +27,15 @@ class Admin extends Component{
  
     componentDidMount(){
         // Animowanie wjezdzajacego Nagłówka h2
-        this.morphing = anime({
-            targets: '.KamilaNagl',
-            translateX:[{ value: window.innerWidth/3,duration: 4000,delay: 500 },
-            {value: window.innerWidth/2,duration: 3000,delay: 500},
-            { value: window.innerWidth/3,duration: 4000,delay: 500 }
-            ],
-            easing: 'easeInOutExpo',
-            loop: false,
-        });
+        // this.morphing = anime({
+        //     targets: '.KamilaNagl',
+        //     translateX:[{ value: window.innerWidth/3,duration: 4000,delay: 500 },
+        //     {value: window.innerWidth/2,duration: 3000,delay: 500},
+        //     { value: window.innerWidth/3,duration: 4000,delay: 500 }
+        //     ],
+        //     easing: 'easeInOutExpo',
+        //     loop: false,
+        // });
 
 
 

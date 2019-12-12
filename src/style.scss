@@ -611,6 +611,18 @@ margin-top: 3%;
 input[type=number] {
     width: 33.33%;
 }
+.ThreeBack{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+.Logowanie{
+  z-index: 999;
+  position: relative;
+}
 .kamcia{
       float: left;
       width: 100%;
@@ -858,7 +870,7 @@ body {
 
 .Step1{
   
-    background: white;
+    background: #ffffffad;
     border-radius: 10px;
     padding: 1%;
     color: black;
@@ -875,7 +887,7 @@ h1{display: none;}
 }
 .AdminMajster{
   
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  // background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
       .KamilaForm{
         z-index: 999;
         position: relative;
@@ -886,7 +898,7 @@ h1{display: none;}
         padding: 5%;
         background: none;
         border-radius: 10px;
-        
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
         input{
           width: 98%;
           margin: 1%;
