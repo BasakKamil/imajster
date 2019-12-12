@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import UserForm from './User/UserForm.js';
 import LoginPanel from './LoginPanel.js';
 import AddBookForm from './AddBookForm.js';
 import ShowProducts from './ShowProducts.js';
@@ -167,10 +166,10 @@ render(){
 return(
     <React.Fragment>
     <div className="Logowanie">
-    <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="home" to="/">Powrót</Link></button></div>
-    <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="cv" to="/cv">CV</Link></button></div>
+
     <div className="NewLogin">
-        <UserForm/>
+        <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="home" to="/">Powrót</Link></button></div>
+        <div className="ReturnHome"> <button className="btn btn-danger NowyL" ><Link data-router-view="cv" to="/cv">CV</Link></button></div>
     </div>
 
     {!this.state.loggedIn && 

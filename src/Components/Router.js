@@ -12,6 +12,7 @@ import UserForm from './User/UserForm';
 import Basket from './Button/Basket';
 import {Provider} from 'react-redux';
 import store from '../store/store';
+import Signup from '../Components/User/UserForm';
 
 export default class Router extends Component {
 
@@ -29,6 +30,7 @@ export default class Router extends Component {
                     <Route exact path='/cv' component={Cv}/>
                     <Route exact path='/admin' component={AdminPanel}/>
                     <Route exact path='/ProductView' component={ProductView}/>
+                    <Route exact path='/Signup' component={Signup}/>
                     <Route exact path='/Basket' component={Basket}/>
                     <Route component={PageNotFound}/>
                 </Switch>

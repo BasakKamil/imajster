@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebaseApp from '../fbase.js';
 import anime from 'animejs';
+import { Link }  from 'react-router-dom';
 
 
 export class LoginPanel extends Component {
@@ -13,7 +14,14 @@ export class LoginPanel extends Component {
         }
 
     }
-
+    
+    signup = (e) => {
+        e.preventDefault();
+        firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {           
+        }).then((u)=>{console.log(u)})
+        .catch((error)=>{console.log(error);
+        });
+    }
 
     authenticate = (event) => {
         event.preventDefault();
@@ -63,15 +71,14 @@ export class LoginPanel extends Component {
         return (
             <div className="AdminMajster">      
             <form className="KamilaForm" onSubmit={this.authenticate}>
-                <h2 className="KamilaNagl">Zaloguj się jako Administrator!</h2>
+                <h2 className="KamilaNagl">Zaloguj się !</h2>
                         <input type="text" placeholder="email" id="email" name="email" className="form-control" onChange={this.handleLoginChange} value={this.state.email}></input>
                         <input type="password" id="password" name="password" className="form-control" onChange={this.handleLoginChange} placeholder="********" value={this.state.password}></input>
                         <button type="submit" className="btn btn-danger KamilaButt">Log in</button> 
+                        <p>lub <br/>Zarejstruj się !</p>
+                        <Link data-router-view="Signup" to="/Signup" className="btn btn-success">Signup</Link>
+                        {/* <button type="submit" className="btn btn-success KamilaButt" onClick={this.signup}>Signup</button>  */}
             </form> 
-            {/* <svg opacity="0.5" className="KamilaTlo" viewBox="0 0 1366 768" backgroundImage={background} > 
-                    <rect className="st0" />
-                    <path className="st1" d="M15,45 L15,45 L15,45" background={color}  strokeWidth="5" />
-            </svg> */}
         </div>
         )
     }
