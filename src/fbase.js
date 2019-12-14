@@ -2,7 +2,7 @@
 import firebase from 'firebase';
 
 
-const cofing = {
+const config = {
     apiKey: "AIzaSyBlKjd_saYzXu9dbhV9HtCqXr17PGr8tYs",
     authDomain: "imajster-1ecc3.firebaseapp.com",
     databaseURL: "https://imajster-1ecc3.firebaseio.com",
@@ -13,10 +13,13 @@ const cofing = {
     measurementId: "G-1T9VQ58EYW"
 };
 
- // Kofiguracja FIREBASE - BAZY DANYCH 
-const firebaseApp = firebase.initializeApp(cofing);
-export const db = firebase.firestore();
-db.settings({timestampsInSnapshots: true}); 
 
-export default firebaseApp 
+
+
+ // Kofiguracja FIREBASE - BAZY DANYCH 
+const firebaseApp = firebase.initializeApp(config);
+firebase.firestore().settings({timestampsInSnapshots: true}); 
+export const firestore = firebase.firestore();
+
+export default firebaseApp
 
