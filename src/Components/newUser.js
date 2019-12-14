@@ -8,6 +8,7 @@ import axios from 'axios';
 
 
 
+
 export class newUserReg extends Component {
 
     constructor(){
@@ -26,8 +27,16 @@ export class newUserReg extends Component {
         }
     }
    
+      collection = () =>{
+        firebaseApp.syncState('store/Users',{
+            context: this,
+            state: 'users'
+        });
+    } 
+
     signup = (e) => {
-        e.preventDefault();
+       
+        // e.preventDefault();
         firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((resp)=>{
 
@@ -54,7 +63,7 @@ export class newUserReg extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.signUp(this.state);
+        this.signup(this.state);
         this.fileSelectedHandler();
      
     }
@@ -67,7 +76,13 @@ export class newUserReg extends Component {
     }
 
     fileUploadHandler = () => {
-        axios.post('');
+        const fd = new FormData();
+        fd.append('image',this.state.selectedFile, this.state.selectedFile.name);
+        // Funckja z Firebase do ładowania fot
+        axios.post('https://us-central1-imajsternowa.cloudfunctions.net/uploadFile',fd)
+        .then(res => {
+            console.log(res);
+        });
     }
 
     render() {
