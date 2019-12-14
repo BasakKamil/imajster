@@ -1,5 +1,6 @@
 
 
+
 const initialState = {
     product: {
         name: 'iPhone XS Ekran',
@@ -7,12 +8,13 @@ const initialState = {
         description: "Super Ekran z Chin"
 
     },
+    products: [],
     editMode : false,
     titleOfProductforRemoval: ""
 }
 
 
-const adminPanelReducer = (state = initialState, action) => {
+const projectReducer = (state = initialState, action) => {
 
 switch(action.type){
     case 'SEND_PRODUCT_TO_EDIT': 
@@ -20,6 +22,18 @@ switch(action.type){
     return {product,
             editMode: true,
             titleOfProductforRemoval: product.name
+            }
+    case 'LOGIN_ERROR': 
+        console.log('login error');
+        return {
+            ...state,
+            authError: 'Login failed'
+        }
+    case 'LOGIN_SUCCESS':
+            console.log('login success');
+            return {
+                ...state,
+                authError: null
             }
 
     default:
@@ -29,4 +43,4 @@ switch(action.type){
 
 }
 
-export default adminPanelReducer;
+export default projectReducer;

@@ -12,9 +12,10 @@ import UserForm from './User/UserForm';
 import Basket from './Button/Basket';
 import {Provider} from 'react-redux';
 import store from '../store/store';
-import Signup from '../Components/User/UserForm';
+import Signup from './newUser';
 
-export default class Router extends Component {
+
+class Router extends Component {
 
     render(){
 
@@ -40,3 +41,6 @@ export default class Router extends Component {
     }
 }
 
+
+
+export default Router
