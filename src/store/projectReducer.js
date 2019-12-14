@@ -3,13 +3,10 @@
 
 const initialState = {
     product: {
-        name: 'iPhone XS Ekran',
-        category: 'iPhone XS',
-        description: "Super Ekran z Chin"
-
+    
     },
     products: [],
-    editMode : false,
+    editMode : true,
     titleOfProductforRemoval: ""
 }
 
