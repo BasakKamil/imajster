@@ -89,7 +89,7 @@
     "style-loader": "",
     "styled-components": "^4.4.1",
     "terser-webpack-plugin": "1.2.3",
-    "three": "^0.106.0",
+    "three": "^0.125.0",
     "three-gltf-loader": "^1.106.0",
     "thunk": "0.0.1",
     "url-loader": "1.1.2",
